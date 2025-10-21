@@ -1,0 +1,1 @@
+(Windowed convexity for GD near the stability edge.) Let f be convex and L-smooth and fix \eta\in(0,2/L]. Then there exists an integer window size W_\star(\theta)=O\big(1/(2-\theta)\big) such that the W_\star-point running average b_n:=\tfrac{1}{W_\star}\sum_{j=0}^{W_\star-1} f(x_{n+j}) is convex in n.

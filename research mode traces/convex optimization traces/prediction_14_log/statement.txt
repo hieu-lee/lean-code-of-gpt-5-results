@@ -1,0 +1,1 @@
+(Restart-on-curvature rule ensures convexity without L.) Let f be convex with L-Lipschitz gradient unknown. Consider GD with an adaptive stepsize \eta_n obtained by doubling until \Delta_{n-1}\ge\Delta_n, and halving otherwise. This rule produces a piecewise-constant stepsize sequence with finitely many halving events and guarantees global convexity of n\mapsto f(x_n).

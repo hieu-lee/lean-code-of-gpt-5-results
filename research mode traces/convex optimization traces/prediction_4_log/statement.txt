@@ -1,0 +1,1 @@
+(Gradient-norm convexity in the conservative regime.) Let f be convex and L-smooth. For GD with \eta\in(0,1/L], the sequence n\mapsto\|\nabla f(x_n)\|^2 is convex: \|\nabla f(x_{n+2})\|^2-2\|\nabla f(x_{n+1})\|^2+\|\nabla f(x_n)\|^2\ge 0 for all n.

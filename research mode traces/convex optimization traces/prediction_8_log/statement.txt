@@ -1,0 +1,1 @@
+(Exact line-search GD yields convex values.) Let f be convex and L-smooth. For exact line-search along negative gradient, x_{n+1}=x_n-\eta_n\nabla f(x_n) with \eta_n:=\operatorname*{argmin}_{\eta\ge0} f(x_n-\eta\nabla f(x_n)), the sequence n\mapsto f(x_n) is convex for all initializations.

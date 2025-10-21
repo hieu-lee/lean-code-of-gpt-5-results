@@ -1,0 +1,66 @@
+[
+  {
+    "statement": "${\\begin{definition}[Euclidean norm, balls, and volume]\nFix\\ n\\in\\mathbb N.\\ On\\ \\mathbb R^n\\ let\\ \\|\\cdot\\|\\ \\text{denote the Euclidean norm and, for}\\ x\\in\\mathbb R^n\\ \\text{and}\\ r>0,\\ \\text{write}\n\\[ B_n(x,r):=\\{y\\in\\mathbb R^n:\\ \\|y-x\\|\\le r\\}. \\]\n\\text{Write }\\operatorname{vol}_n(\\cdot)\\ \\text{for }n\\text{–dimensional Lebesgue measure and }\\omega_n:=\\operatorname{vol}_n\\!\\bigl(B_n(0,1)\\bigr)\\ \\text{for the volume of the unit ball.\\end{definition}}\n\n{\\begin{definition}[Sphere packing and (asymptotic) density]\nLet\\ r>0.\\ A\\ \\emph{sphere packing of radius }r\\ \\text{in }\\mathbb R^n\\ \\text{is a set }X\\subset\\mathbb R^n\\ \\text{such that the closed balls }\\{B_n(x,r):x\\in X\\}\\ \\text{are pairwise disjoint. Its (upper) asymptotic density is}\n\\[\\delta(X,r):=\\limsup_{R\\to\\infty}\\ \\frac{\\operatorname{vol}_n\\!\\Bigl(\\bigcup_{x\\in X} B_n(x,r)\\ \\cap\\ B_n(0,R)\\Bigr)}{\\operatorname{vol}_n\\!\\bigl(B_n(0,R)\\bigr)}\\in[0,1].\\]\n\\text{The optimal packing density in dimension }n\\text{ is}\n\\[\\theta(n):=\\sup\\{\\delta(X,r):\\ X\\subset\\mathbb R^n,\\ r>0,\\ \\{B_n(x,r)\\}_{x\\in X}\\text{ pairwise disjoint}\\}.\\]\n\\end{definition}}\n\n{\\begin{definition}[Lattices, covolume, and lattice packings]\nA \\emph{lattice} \\(L\\subset\\mathbb R^n\\) is a discrete additive subgroup of rank \\(n\\) of the form \\(L=A\\mathbb Z^n\\) for some invertible \\(A\\in \\mathrm{GL}_n(\\mathbb R)\\). Its \\emph{covolume} (or determinant) is \\(\\det(L):=|\\det A|\\), i.e. the volume of a fundamental domain of \\(L\\). The \\emph{minimum} of \\(L\\) is \\(\\lambda(L):=\\min\\{\\|v\\|: v\\in L\\setminus\\{0\\}\\}\\). For \\(r\\le \\tfrac12\\lambda(L)\\), the translates \\(\\{B_n(\\ell,r):\\ell\\in L\\}\\) form a lattice packing with density\n\\[\\Delta(L,r)=\\frac{\\operatorname{vol}_n\\!\\bigl(B_n(0,r)\\bigr)}{\\det(L)}=\\frac{\\omega_n\\, r^n}{\\det(L)}.\\]\n\\end{definition}}\n\n{\\begin{definition}[Absolute constant]\nA constant \\(c>0\\) is called \\emph{absolute} if it does not depend on \\(n\\) (or any other parameter in the statement).\n\\end{definition}}\n\n{\\begin{theorem}[Klartag’s quadratic lower bound for sphere packing density, 2025]\n\\label{thm:Klartag}\n\\text{There exists an absolute constant }c>0\\text{ such that, for every }n\\ge 2,\n\\[\\theta(n)\\ \\ge\\ c\\,\\frac{n^2}{2^{\\,n}}.\\]\n\\text{Moreover, this lower bound is achieved by a lattice packing: for each }n\\text{ there exists a lattice }L\\subset\\mathbb R^n\\text{ and a radius }r>0\\text{ with}\n\\[\\Delta(L,r)\\ \\ge\\ c\\,\\frac{n^2}{2^{\\,n}}.\\]\n\\end{theorem}}\n\n{\\begin{remark}[Context]\n\\text{Theorem~\\ref{thm:Klartag} improves the classical order }\\theta(n)\\gtrsim n\\,2^{-n}\\text{ (Rogers 1947 and subsequent refinements) by a further linear factor in }n.\\ \\text{It also strengthens the 2023 bound }\\theta(n)\\ge (1-o(1))\\frac{n\\log n}{2^{n+1}}\\ \\text{by replacing }\\log n\\ \\text{with }n\\text{ and, in addition, obtaining a lattice packing with the stated density.}\n\\end{remark}}",
+    "url": "seed://input"
+  },
+  {
+    "statement": "$\\exists\\ c>0\\ \\text{absolute s.t.}\\ \\forall n\\ge2:\\ \\theta(n)\\ \\ge\\ c\\,\\frac{n^{2}}{2^{n}},\\ \\text{and moreover }\\exists\\ L\\subset\\mathbb R^{n},\\ r>0:\\ \\Delta(L,r)\\ge c\\,\\frac{n^{2}}{2^{n}}.$",
+    "url": "https://arxiv.org/abs/2504.05042"
+  },
+  {
+    "statement": "$\\theta(n)\\ \\ge\\ (1-o(1))\\,\\dfrac{n\\log n}{2^{n+1}}\\quad\\text{as }n\\to\\infty.$",
+    "url": "https://arxiv.org/abs/2312.10026"
+  },
+  {
+    "statement": "$\\exists\\ c>0\\ \\text{absolute and }n_0\\ \\text{s.t. }\\forall n\\ge n_0:\\ \\theta(n)\\ \\ge\\ c\\,\\dfrac{n}{2^{n}}\\,.$",
+    "url": "https://arxiv.org/abs/math/0402132"
+  },
+  {
+    "statement": "(Minkowski–Hlawka) $\\forall n\\ge2:\\ \\theta(n)\\ \\ge\\dfrac{\\zeta(n)}{2^{\\,n-1}}\\,.$",
+    "url": "https://en.wikipedia.org/wiki/Minkowski%E2%80%93Hlawka_theorem"
+  },
+  {
+    "statement": "(Siegel mean value) Let $S\\subset\\mathbb R^n$ be bounded measurable and $D>0$. Averaging over unimodular lattices of covolume $D$ gives $\\mathbb{E}_L\\,\\#\\{v\\in L\\setminus\\{0\\}:v\\in S\\}=\\dfrac{\\mathrm{vol}_n(S)}{D}$ and $\\mathbb{E}_L\\,\\#\\{v\\in L\\text{ primitive}:v\\in S\\}=\\dfrac{\\mathrm{vol}_n(S)}{D\\,\\zeta(n)}$.",
+    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/siegels-mean-value-theorem-in-the-geometry-of-numbers/99629CC1167820C5C875DA8B4947CB4F"
+  },
+  {
+    "statement": "$\\omega_n\\ =\\ \\dfrac{\\pi^{n/2}}{\\Gamma\\!\\bigl(\\tfrac{n}{2}+1\\bigr)}\\,.$",
+    "url": "https://en.wikipedia.org/wiki/Volume_of_an_n-ball"
+  },
+  {
+    "statement": "$\\omega_n\\ \\sim\\ \\dfrac{1}{\\sqrt{\\pi n}}\\Bigl(\\dfrac{2\\pi e}{n}\\Bigr)^{\\!n/2}\\quad(n\\to\\infty).$",
+    "url": "https://en.wikipedia.org/wiki/Volume_of_an_n-ball"
+  },
+  {
+    "statement": "(Kabatiansky–Levenshtein) $\\displaystyle \\theta(n)\\ \\le\\ 2^{-(0.599\\,+o(1))\\,n}\\quad(n\\to\\infty).$",
+    "url": "https://www.mathnet.ru/eng/ppi/v14/i1/p3"
+  },
+  {
+    "statement": "(Cohn–Elkies LP bound) Linear programming methods yield upper bounds on $\\theta(n)$ that are best known in many dimensions (e.g. $4\\le n\\le36$).",
+    "url": "https://annals.math.princeton.edu/2003/157-2/p09"
+  },
+  {
+    "statement": "(Cohn–Zhao) The Kabatiansky–Levenshtein upper bound is improved by an absolute constant factor, and the Cohn–Elkies LP bound is always at least as strong as the KL bound.",
+    "url": "https://arxiv.org/abs/1212.5966"
+  },
+  {
+    "statement": "(Three-point bounds) Semidefinite-programming three-point bounds sharpen linear-programming upper bounds, improving $\\theta(n)$ upper bounds for $n\\in\\{4,5,6,7,9,\\dots,16\\}$.",
+    "url": "https://arxiv.org/abs/2206.15373"
+  },
+  {
+    "statement": "$\\theta(8)\\ =\\ \\text{density}(E_8)\\ =\\ \\dfrac{\\pi^{4}}{384}\\,.$",
+    "url": "https://annals.math.princeton.edu/2017/185-3/p07"
+  },
+  {
+    "statement": "$\\theta(24)\\ =\\ \\text{density}(\\Lambda_{24})\\ =\\ \\dfrac{\\pi^{12}}{12!}\\,.$",
+    "url": "https://annals.math.princeton.edu/2017/185-3/p08"
+  },
+  {
+    "statement": "$\\theta(3)\\ =\\ \\dfrac{\\pi}{3\\sqrt{2}}\\,.$",
+    "url": "https://annals.math.princeton.edu/2005/162-3/p01"
+  },
+  {
+    "statement": "(Historical context of $n\\,2^{-n}$ order) Statistical-physics methods (hard-sphere model) give another proof that for large $n$ there exist packings of density $\\Omega\\!\\bigl(n\\,2^{-n}\\bigr)$, consistent with Rogers–Davenport–Ball bounds.",
+    "url": "https://arxiv.org/abs/1707.00476"
+  }
+]

@@ -1,0 +1,1 @@
+Conjecture 2 (Layer-doubling amplifies small-difference edges). There exists an absolute c>0 such that for every graph G with sufficiently large maximum degree, one has θ_{Δ}(K_2□G)≥max{θ_{Δ}(G),c}. In particular, there is a universal c such that every 3-edge-weighting of K_2□G leaves at least a c-fraction of edges with |s(u)−s(v)|≤1, regardless of G.

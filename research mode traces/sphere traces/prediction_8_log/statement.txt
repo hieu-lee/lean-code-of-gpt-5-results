@@ -1,0 +1,3 @@
+Probability at the quadratic scale is Θ(n^{-2}). There exists an absolute c>0 such that for all sufficiently large n, one has
+c n^{-2} \ \le\ \mu\{ L∈\mathcal{L}_n : Δ(L) ≥ c n^{2} 2^{-n} \} \ \le\ C n^{-2},
+where the upper bound holds for some absolute C by known tail inequalities, and the lower bound is conjectured to match it up to constants.

@@ -1,0 +1,1 @@
+Conjecture 3 (Reconfiguration connectivity for trees). For every tree T on at least 3 vertices, the NSD reconfiguration graph R_3(T) is connected and has diameter O(|E(T)|). Moreover, NSD 3-edge-weightings are 1-locally-reconfigurable on trees.

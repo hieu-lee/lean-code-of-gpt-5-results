@@ -1,0 +1,19 @@
+[
+  "Let $f$ be convex and $L$-smooth. Gradient descent with step size $\\eta\\in\\bigl(0,\\tfrac{1.75}{L}\\bigr]$ induces a convex optimization curve: $n\\mapsto f(x_n)$ is convex (equivalently, $f(x_n)-f(x_{n+1})$ is non-increasing).",
+  "For any $L>0$ there exists a convex $L$-smooth function and initialization such that for every step size $\\eta\\in\\bigl(\\tfrac{1.75}{L},\\tfrac{2}{L}\\bigr)$, the GD optimization curve is not convex (despite being monotone decreasing and convergent).",
+  "For convex $L$-smooth $f$ and $\\eta\\in\\bigl(0,\\tfrac{2}{L}\\bigr]$, the GD gradient norms are non-increasing: $\\|\\nabla f(x_{n+1})\\|\\le \\|\\nabla f(x_n)\\|$ for all $n$.",
+  "For convex $L$-smooth $f$, the GF optimization curve $t\\mapsto f(x(t))$ is convex for all $t\\ge 0$.",
+  "For convex $L$-smooth $f$, along GF the map $t\\mapsto\\|\\nabla f(x(t))\\|$ is non-increasing on $[0,\\infty)$.",
+  "(Convexity threshold for GD) If $f$ is convex and $L$-smooth, then for every $\\eta\\in\\bigl(0,\\tfrac{1.75}{L}\\bigr]$ the GD optimization curve $n\\mapsto f(x_n)$ is convex; moreover, the threshold $\\tfrac{1.75}{L}$ is sharp.",
+  "(Tight counterexamples) For every $L>0$ there exist convex $L$-smooth $f$ and $x_0$ such that for all $\\eta\\in\\bigl(\\tfrac{1.75}{L},\\tfrac{2}{L}\\bigr)$ the GD curve is not convex, even though $f(x_{n+1})\\le f(x_n)$ and $x_n\\to x_*$.",
+  "(Monotone gradients in GD) If $f$ is convex and $L$-smooth, then for any $\\eta\\in\\bigl(0,\\tfrac{2}{L}\\bigr]$ the sequence $\\{\\|\\nabla f(x_n)\\|\\}_{n\\ge 0}$ produced by GD is non-increasing.",
+  "(GF convexity and gradient decay) For convex $L$-smooth $f$, GF satisfies $\\tfrac{\\mathrm d}{\\mathrm dt}f(x(t))=-\\|\\nabla f(x(t))\\|^2$, $\\tfrac{\\mathrm d^2}{\\mathrm dt^2}f(x(t))=2\\,\\langle\\nabla^2 f(x(t))\\nabla f(x(t)),\\nabla f(x(t))\\rangle\\ge 0$, hence $t\\mapsto f(x(t))$ is convex and $t\\mapsto\\|\\nabla f(x(t))\\|$ is non-increasing.",
+  "(GD descent inequality) For convex $L$-smooth $f$ and any $\\eta>0$, GD satisfies $f(x_{n+1})\\le f(x_n)-\\eta\\Bigl(1-\\tfrac{L\\eta}{2}\\Bigr)\\|\\nabla f(x_n)\\|^2$; in particular, $f(x_{n+1})\\le f(x_n)$ for all $n$ whenever $\\eta\\in\\bigl(0,\\tfrac{2}{L}\\bigr]$.",
+  "(Monotone $f(x_n)$ under classical steps) For convex $L$-smooth $f$, GD with any $\\eta\\in\\bigl(0,\\tfrac{2}{L}\\bigr)$ yields a monotonically decreasing optimization curve $f(x_{n+1})\\le f(x_n)$ and convergence to $\\min f$.",
+  "(Baillon–Haddad) For convex $C^1$ functions, $\\nabla f$ is $L$-Lipschitz if and only if it is $\\tfrac1L$-cocoercive: $\\langle\\nabla f(x)-\\nabla f(y),x-y\\rangle\\ge \\tfrac1L\\|\\nabla f(x)-\\nabla f(y)\\|^2$.",
+  "(Nonexpansive GD step) If $f$ is convex and $L$-smooth, then the forward (gradient) step $T_\\eta:=I-\\eta\\nabla f$ is nonexpansive for any $\\eta\\in[0,\\tfrac{2}{L}]$ (equivalently, $\\|T_\\eta x-T_\\eta y\\|\\le\\|x-y\\|$ for all $x,y$).",
+  "(GF energy decay rate in finite dimension) For convex $f$ with a minimizer, GF satisfies $f(x(t)){-}f_*\\in L^1([0,\\infty))$ and $f(x(t)){-}f_*=o(1/t)$ as $t\\to\\infty$ (finite-dimensional Hilbert spaces).",
+  "(GD as Euler discretization of GF) GD with step size $\\eta>0$ is the explicit Euler discretization of GF, and as $\\eta\\to 0$, the Euler interpolants $x^{(\\eta)}(t)$ converge to the GF solution $x(t)$ on compact time intervals.",
+  "(Exact worst-case rates for fixed-step GD) For $L$-smooth minimization, fixed-step GD admits exact worst-case bounds; in particular, when all steps $\\eta_k\\in(0,1/L]$, the derived function-value bounds are tight for some instances.",
+  "(Enhanced Baillon–Haddad) Cocoercivity formulations extend beyond globally Lipschitz gradients: variants hold for convex $C^{1,+}$ functions on open convex sets, yielding local cocoercivity characterizations."
+]

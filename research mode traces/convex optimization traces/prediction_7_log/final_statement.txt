@@ -1,0 +1,1 @@
+There exists a one-dimensional convex C^1 function f with 1-Lipschitz gradient (i.e., L=1) and a gradient-descent trajectory whose local curvature surrogates satisfy L_n \equiv L_0, such that with the maximal admissible constant step size \eta = 2/L_0 the GD loss curve is not convex; in fact, already \delta_0 = f(x_2) - 2f(x_1) + f(x_0) < 0.

@@ -1,0 +1,1 @@
+There exist absolute constants c,C>0 such that for every n≥2 there is a unimodular lattice L⊂R^n with Δ(L) ≥ c n^{2} 2^{-n}, whose dual has large minimum and whose Voronoi cell has bounded inertia, namely λ(L^{*}) ≥ c √n and (1/vol_n(V(L))) ∫_{V(L)} ||x||^2 dx ≤ C n.

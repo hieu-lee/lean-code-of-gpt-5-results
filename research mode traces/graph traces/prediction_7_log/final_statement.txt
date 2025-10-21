@@ -1,0 +1,1 @@
+For every c>0, there exists a family {G_Δ} of nice graphs with Δ(G_Δ)→∞ and |V(G_Δ)|≤Δ(G_Δ)^{O(1)} such that, for p=c·(log Δ(G_Δ))/Δ(G_Δ), we have a.a.s. (G_Δ)_p is not nice.

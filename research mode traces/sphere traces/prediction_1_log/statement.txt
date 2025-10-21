@@ -1,0 +1,1 @@
+Low-kissing high-density lattices. There exist absolute c,C>0 such that for every n≥3 there is a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n} and kissing number τ(L) ≤ C n \log n.

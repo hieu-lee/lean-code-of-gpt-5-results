@@ -1,0 +1,3 @@
+[
+  "Near-optimal packing–covering product with quadratic-order packing. There exist absolute c,C>0 such that for every n≥2 there is a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n} and c n ≤ ρ(L)·λ(L) ≤ C n."
+]

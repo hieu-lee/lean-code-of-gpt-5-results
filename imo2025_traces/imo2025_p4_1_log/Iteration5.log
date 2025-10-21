@@ -1,0 +1,76 @@
+========================================
+Iteration 5 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+\begin{proof}
+Let $f(N)$ be the sum of the three largest proper divisors of $N$. If the positive divisors of $N$ in increasing order are $1=d_1<d_2<d_3<d_4<\cdots<d_k=N$, then the three largest proper divisors are $N/d_2,\,N/d_3,\,N/d_4$, hence
+$$
+ f(N)=\frac{N}{d_2}+\frac{N}{d_3}+\frac{N}{d_4}=N\Bigl(\frac1{d_2}+\frac1{d_3}+\frac1{d_4}\Bigr).
+$$
+
+Basic cases for $6\mid N$:
+- If $4\nmid N$ and $5\nmid N$, then $(d_2,d_3,d_4)=(2,3,6)$ and $f(N)=N$.
+- If $4\mid N$, then $(d_2,d_3,d_4)=(2,3,4)$ and $f(N)=\tfrac{13}{12}N$.
+- If $4\nmid N$ and $5\mid N$, then $(d_2,d_3,d_4)=(2,3,5)$ and $f(N)=\tfrac{31}{30}N$.
+
+If $6\nmid N$, then $f(N)<N$: indeed, if $2\nmid N$ then $d_2\ge3,\,d_3\ge5,\,d_4\ge7$, so $\sum 1/d_i\le1/3+1/5+1/7<1$; if $2\mid N$ but $3\nmid N$, then $d_2=2,\,d_3\ge4,\,d_4\ge5$, so $\sum 1/d_i\le1/2+1/4+1/5<1$.
+
+Claim. If $6\nmid N$, then $6\nmid f(N)$.
+
+Proof of claim. If $2\nmid N$, all proper divisors of $N$ are odd, so $f(N)$ is odd.
+
+Assume now $2\mid N$ and $3\nmid N$. Write the sum as $N(1/d_2+1/d_3+1/d_4)$ with $d_2=2$. Work modulo $3$ and use that for $x\not\equiv0\pmod3$ one has $x^{-1}\equiv x\pmod3$.
+- If $4\mid N$, then $(d_2,d_3)=(2,4)$, so $1/d_2+1/d_3\equiv2+1\equiv0\pmod3$, while $d_4\not\equiv0\pmod3$ (since $3\nmid N$), hence $1/d_2+1/d_3+1/d_4\not\equiv0\pmod3$. Thus $3\nmid f(N)$.
+- If $4\nmid N$, then $v_2(N)=1$. Let $p=d_3$ be the smallest odd divisor of $N$; then $p\ge5$ and the next divisor $d_4$ is either $2p$ or an odd divisor. If $d_4=2p$, then $1/d_3+1/d_4\equiv p+2p\equiv0\pmod3$, so $1/d_2+1/d_3+1/d_4\equiv2\not\equiv0\pmod3$, whence $3\nmid f(N)$. If instead $d_4$ is odd, then $N/2$ is odd while $N/d_3$ and $N/d_4$ are even, so $f(N)$ is odd. In all subcases $6\nmid f(N)$.
+This proves the claim. $\square$
+
+Now consider an infinite sequence $a_1,a_2,\dots$ of positive integers, each with at least three proper divisors, and $a_{n+1}=f(a_n)$ for all $n\ge1$.
+
+1) All terms are multiples of $6$. If $6\nmid a_1$, then by the claim $6\nmid a_n$ for all $n$, and by the above strict inequality $a_{n+1}<a_n$ for all $n$, which is impossible for an infinite sequence of positive integers. Thus $6\mid a_1$. If for some $m$ one had $6\mid a_m$ but $6\nmid a_{m+1}$, then by the claim $6\nmid a_{m+i}$ and $a_{m+i+1}<a_{m+i}$ for all $i\ge0$, again impossible. Therefore $6\mid a_n$ for every $n$.
+
+Consequently, at any index $n$ exactly one of the following occurs:
+- If $v_2(a_n)=1$ and $5\nmid a_n$, then $(d_2,d_3,d_4)=(2,3,6)$ and $a_{n+1}=a_n$.
+- If $4\mid a_n$ (hence $(d_2,d_3,d_4)=(2,3,4)$), then $a_{n+1}=\tfrac{13}{12}a_n$ and $v_2(a_{n+1})=v_2(a_n)-2$, $v_3(a_{n+1})=v_3(a_n)-1$.
+- If $v_2(a_n)=1$ and $5\mid a_n$, then $(d_2,d_3,d_4)=(2,3,5)$ and $a_{n+1}=\tfrac{31}{30}a_n$ with $v_2(a_{n+1})=v_2(a_n)-1$ and $v_3(a_{n+1})=v_3(a_n)-1$.
+
+2) Structural exclusions.
+- $v_2(a_n)\ne2$ for all $n$. Indeed, when $v_2(a_n)=2$ and $6\mid a_n$, we have $(d_2,d_3,d_4)=(2,3,4)$, so the three largest proper divisors are $a_n/2,\,a_n/3,\,a_n/4$, which are even, even, and odd respectively; hence $a_{n+1}$ is odd, contradicting $6\mid a_{n+1}$.
+- No term is divisible by $5$. Suppose $5\mid a_n$ for some $n$. If $v_2(a_n)=1$, then $a_{n+1}=\tfrac{31}{30}a_n$ is odd (since $30\mid a_n$), contradicting $6\mid a_{n+1}$. If instead $v_2(a_n)\ge2$, then while $v_2\ge2$ we are in the $\tfrac{13}{12}$-case, so $v_2$ drops by $2$ each step, $v_3$ drops by $1$ each step, and $v_5$ stays unchanged. Either we reach $v_2=2$ (then the next term is odd by the previous bullet), or we reach $v_2=1$ still with $5\mid a$ (then the next term is odd by the $\tfrac{31}{30}$-case), or $v_3$ becomes $0$ earlier (then the next term is not divisible by $3$). In every subcase some subsequent term fails to be divisible by $6$, contradicting 1). Hence $5\nmid a_n$ for all $n$.
+
+3) Necessary conditions on $a_1$. Write $a_1=2^\alpha3^\beta m$ with $\gcd(m,6)=1$.
+- Whenever $4\mid a_n$ we are in the $\tfrac{13}{12}$-case, which reduces $v_2$ by $2$. If $\alpha$ were even, repeated $\tfrac{13}{12}$-steps would inevitably produce a term with $v_2=2$, contradicting the first bullet of (2). Therefore $\alpha$ is odd.
+- Starting from $\alpha$ odd and using $5\nmid a_n$ for all $n$, exactly $t=(\alpha-1)/2$ successive $\tfrac{13}{12}$-steps occur before reaching $v_2=1$. Each such step decreases $v_3$ by $1$, and all terms must remain multiples of $6$; hence we need $\beta\ge t+1=(\alpha+1)/2$.
+- From the second bullet of (2), $5\nmid a_1$.
+
+Thus any admissible $a_1$ must satisfy
+$$
+ 6\mid a_1,\quad 5\nmid a_1,\quad v_2(a_1)\text{ odd},\quad v_3(a_1)\ge\frac{v_2(a_1)+1}{2}.
+$$
+
+4) Sufficiency. Conversely, assume $a_1=2^\alpha3^\beta m$ satisfies $\alpha$ odd, $\beta\ge(\alpha+1)/2$, and $\gcd(m,30)=1$. Then the evolution performs $t=(\alpha-1)/2$ successive $\tfrac{13}{12}$-steps (since $4\mid a_n$ exactly while $v_2\ge2$ and $5\nmid a_n$ always), giving
+$$
+ a_{1+t}=2^{\alpha-2t}3^{\beta-t}m=2^1\,3^{\beta-t}m,
+$$
+with $\beta-t\ge1$ and still $5\nmid a_{1+t}$. Hence $(d_2,d_3,d_4)=(2,3,6)$ and $a_{1+t+1}=f(a_{1+t})=a_{1+t}$. The sequence is therefore constant from index $1+t$ onward. Being multiples of $6$, all terms have at least three proper divisors, so the construction meets the requirements.
+
+Conclusion. The set of all possible initial values is
+$$
+ \Bigl\{a_1\in\mathbb N:\ 6\mid a_1,\ 5\nmid a_1,\ v_2(a_1)\text{ odd, and }v_3(a_1)\ge\tfrac{v_2(a_1)+1}{2}\Bigr\}
+ =\bigl\{2^{2t+1}3^s m:\ t\ge0,\ s\ge t+1,\ \gcd(m,30)=1\bigr\}.
+$$
+\end{proof}
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: ACCEPT
+
+----------------------------------------
+
+Judge #2 Assessment
+Decision: ACCEPT
+
+========================================
+

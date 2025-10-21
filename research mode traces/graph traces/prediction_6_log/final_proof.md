@@ -1,0 +1,7 @@
+Proof. Recall that if a graph H contains an odd cycle C_n and the edge-weights are restricted to any real interval I=[a,a+2] of length at most 2, then there is no edge-weighting ω:E(C_n)→I with |s_ω(u)−s_ω(v)|≥2 on all edges uv∈E(C_n), where s_ω(v) denotes the sum of weights on edges incident to v. In particular, no odd cycle admits a {1,2,3}-edge-weighting with |s_ω(u)−s_ω(v)|≥2 on all edges, since {1,2,3}⊆[1,3].
+
+Assume, for contradiction, that for ε0=1/6 there exists δ>0 such that every triangle-sparse graph G with tri(G)≤δ|E(G)| admits a set F⊆E(G) with |F|≤ε0|E(G)| for which G−F has a 3-edge-weighting ω:E(G−F)→{1,2,3} satisfying |s_ω(u)−s_ω(v)|≥2 on all edges.
+
+Consider the graph G defined as the disjoint union of T copies of C_5, i.e., G=T·C_5. Then tri(G)=0≤δ|E(G)| and |E(G)|=5T. By the assumption, there exists F⊆E(G) with |F|≤(1/6)·5T<T such that G−F has the claimed 3-edge-weighting. Since fewer than T edges are removed from G, at least one C_5 component remains intact in G−F. Hence G−F contains an odd cycle C_5, which by the odd-cycle obstruction above admits no {1,2,3}-edge-weighting with |s_ω(u)−s_ω(v)|≥2 on all its edges—a contradiction.
+
+Therefore, no such δ exists for ε0=1/6. Equivalently, for this ε0 and for every δ>0 there is a triangle-sparse graph G such that every F with |F|≤ε0|E(G)| leaves G−F without any 3-edge-weighting satisfying |s_ω(u)−s_ω(v)|≥2 on all edges, as claimed.

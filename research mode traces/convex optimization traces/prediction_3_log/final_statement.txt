@@ -1,0 +1,1 @@
+Let $f:\mathbb{R}^d\to\mathbb{R}$ be convex and differentiable. For the implicit (backward Euler) method $x_{n+1}=x_n-\eta\,\nabla f(x_{n+1})$ with any $\eta>0$, the sequence $n\mapsto f(x_n)$ is convex: $\delta_n\ge 0$ for all $n$. Moreover, if $f$ is $\mu$-strongly convex, then $(\Delta_n)$ is strictly decreasing unless $x_n$ is optimal.

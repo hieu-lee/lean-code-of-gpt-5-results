@@ -1,0 +1,95 @@
+========================================
+Iteration 6 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** For every integer $n\ge 3$, the values of $k\in\{0,1,\dots,n\}$ for which there exist $n$ distinct lines covering all integer points $(a,b)$ with $a,b\ge1$, $a+b\le n+1$, and having exactly $k$ sunny lines (i.e., not parallel to the $x$–axis, $y$–axis, or the line $x+y=0$) are precisely
+$$k\in\{0,1,3\}.$$ 
+
+**Proof.** For $m\in\mathbb N$ set
+$$\mathcal T_m:=\{(a,b)\in\mathbb Z^2:\ a,b\ge1,\ a+b\le m+1\},\qquad D_r:=\{(a,b)\in\mathbb Z^2: a+b=r\}.$$
+
+1) Existence for $k\in\{0,1,3\}$.
+- $k=0$: take the $n$ anti-diagonals $D_2,D_3,\dots,D_{n+1}$.
+- $k=1$: take $D_3,\dots,D_{n+1}$ together with $y=x$.
+- $k=3$: take $D_5,\dots,D_{n+1}$ and the three sunny lines $y=x$, $y=-2x+5$, $y=-\tfrac12x+\tfrac52$, which cover $\mathcal T_3=D_2\cup D_3\cup D_4$.
+
+2) A sharp intersection bound inside $\mathcal T_m$.
+
+Lemma 1. Let $m\ge1$. Any sunny line $\ell$ meets $\mathcal T_m$ in at most $\big\lfloor\tfrac{m+1}2\big\rfloor$ lattice points. Moreover, if $m=2t+1\ge3$ is odd, then equality $|\ell\cap\mathcal T_m|=t+1$ holds if and only if $\ell$ is one of
+$$y=x,\qquad y=-2x+(m+2),\qquad y=-\tfrac12x+\tfrac{m+2}2.$$
+
+Proof. Write $\ell$ as $ax+by=c$ with $\gcd(a,b)=1$. For each $r$, the (unique) intersection $\ell\cap D_r$ is
+$$x=\frac{br-c}{b-a},\qquad y=\frac{c-ar}{b-a}.$$
+Thus $\ell$ meets $D_r$ in a lattice point iff $b-a\mid br-c$ (equivalently, $b-a\mid c-ar$). Since $\gcd(b-a,a)=\gcd(b-a,b)=\gcd(a,b)=1$, this is equivalent to the single congruence
+$$r\equiv r_0\pmod{|b-a|}$$
+for some $r_0$ depending on $\ell$. Hence among the $m$ admissible sums $r\in\{2,3,\dots,m+1\}$, at most $\big\lceil m/|b-a|\big\rceil$ of them yield lattice intersections; therefore
+$$|\ell\cap\mathcal T_m|\le\Big\lceil\frac m{|b-a|}\Big\rceil.$$
+Since $\ell$ is sunny, it is not parallel to $x+y=0$, so $|b-a|\ne0$. We distinguish cases.
+
+- If $|b-a|\ge3$, then for $m=2t+1$ we have $|\ell\cap\mathcal T_m|\le\big\lceil\frac{2t+1}{3}\big\rceil\le t< t+1$.
+
+- If $|b-a|=2$, the direction vector $(-b,a)$ satisfies $(-b)+a=\pm2$. If both coordinates have the same sign, then necessarily $(-b,a)=\pm(1,1)$, i.e. $\ell$ has slope $+1$. If they have opposite signs, one of $|a|,|b|$ is $\ge3$; then among $x\in\{1,\dots,m\}$ (or among $y\in\{1,\dots,m\}$) the values occurring on $\ell$ lie in a fixed residue class modulo that coordinate’s absolute value, so $|\ell\cap\mathcal T_m|\le\lceil m/3\rceil\le t< t+1$. Thus the only possible equality case with $|b-a|=2$ is slope $+1$.
+For a line of slope $+1$, $\ell:y=x+c$ with $c\in\mathbb Z$. The points of $\mathcal T_m$ on $\ell$ are $(a,a+c)$ with $a\ge\max(1,1-c)$ and $2a+c\le m+1$. Hence for $m=2t+1$:
+$$N(c):=|\ell\cap\mathcal T_m|=\begin{cases}t+1-\big\lceil\tfrac c2\big\rceil,& c\ge0,\\ t+1-\big\lceil\tfrac{-c}2\big\rceil,& c\le0.
+\end{cases}$$
+Therefore $N(c)\le t+1$, with equality iff $c=0$, i.e. $\ell:y=x$.
+
+- If $|b-a|=1$, then for every $r$ the intersection $\ell\cap D_r$ is a lattice point; the restriction comes from $1\le x,y\le m$. Let $(-b,a)=(u,v)$ be a primitive direction with $u+v=\pm1$. If $\max\{|u|,|v|\}\ge3$, then restricting the coordinate with absolute step $\ge3$ to $\{1,\dots,m\}$ forces $|\ell\cap\mathcal T_m|\le\lceil m/3\rceil\le t$. Thus to have $t+1$ points one must have $\max\{|u|,|v|\}\le2$. The only primitive possibilities with $u+v=\pm1$ and $\max\{|u|,|v|\}\le2$ are $\pm(2,-1)$ (slope $-\tfrac12$) and $\pm(1,-2)$ (slope $-2$).
+
+For slope $-2$, write $\ell:y=-2x+b$ with $b\in\mathbb Z$. The conditions $x\ge1$, $y\ge1$ and $x+y\le m+1$ become
+$$1\le x\le \Big\lfloor\tfrac{b-1}2\Big\rfloor,\qquad x\ge b-(m+1).$$
+Hence
+$$|\ell\cap\mathcal T_m|=\max\Big\{0,\Big\lfloor\tfrac{b-1}2\Big\rfloor-\max\{1,b-(m+1)\}+1\Big\}.$$
+If $b\le m+1$, this equals $\lfloor\tfrac{b-1}2\rfloor\le\lfloor\tfrac m2\rfloor=t$. If $b\ge m+3$, then a short calculation gives $|\ell\cap\mathcal T_m|\le t$. For $b=m+2$, one gets $x\in\{1,2,\dots,\lfloor\tfrac{m+1}{2}\rfloor\}=\{1,\dots,t+1\}$, hence $t+1$ points. Therefore equality occurs for slope $-2$ exactly at $\ell:y=-2x+(m+2)$.
+
+For slope $-\tfrac12$, write $\ell:2y=-x+b$ with $b\in\mathbb Z$. Then $x\equiv b\pmod2$, and
+$$1\le x\le \min\{b-2,\,2m+2-b\}.$$
+Set $B(b):=\min\{b-2,\,2m+2-b\}$. The number of admissible $x$ in $\{1,\dots,B(b)\}$ of fixed parity is $\lceil B(b)/2\rceil$. For $b=m+2$ we have $B(b)=m$, giving $\lceil m/2\rceil=t+1$. If $b\ne m+2$, then $B(b)\le m-1$ and $\lceil B(b)/2\rceil\le\lceil (m-1)/2\rceil=t$. Thus equality occurs for slope $-\tfrac12$ exactly at $\ell:2y=-x+(m+2)$, i.e. $y=-\tfrac12x+\tfrac{m+2}{2}$.
+
+Collecting the cases, for $m=2t+1\ge3$ the sunny lines attaining $t+1$ points in $\mathcal T_m$ are precisely $y=x$, $y=-2x+(m+2)$, and $y=-\tfrac12x+\tfrac{m+2}{2}$. Since for all lines we had $|\ell\cap\mathcal T_m|\le\lceil m/|b-a|\rceil\le\lfloor\tfrac{m+1}{2}\rfloor$, the general bound follows as well. ∎
+
+Corollary 2. $\mathcal T_m$ cannot be covered by $m$ sunny lines if $m\in\{2\}\cup\{4,5,6,\dots\}$. It is possible for $m=1$ and $m=3$.
+
+Proof. The cases $m=1,3$ are realized in step 1. For $m=2$ the three points cannot be covered by two sunny lines because $(1,2)$ and $(2,1)$ lie on slope $-1$. For $m=2t\ge4$, Lemma 1 yields at most $t$ points per sunny line, so $m$ sunny lines cover at most $mt=2t^2<|\mathcal T_m|=2t^2+t$. For $m=2t+1\ge5$, by Lemma 1 at most three sunny lines contribute $t+1$ points each, the rest contribute $\le t$, hence 
+$$\text{total}\le 3(t+1)+(m-3)t=2t^2+t+3<2t^2+3t+1=|\mathcal T_m|.$$ 
+∎
+
+3) A universal demand bound on sunny lines.
+
+Consider a covering of $\mathcal T_n$ by $n$ lines with exactly $k$ sunny lines; among the remaining $n-k$ non-sunny lines let $h,v,d$ be the numbers of horizontal, vertical, and anti-diagonal lines, $h+v+d=n-k$. For each $r\in\{2,\dots,n+1\}$, if $D_r$ is not among the chosen anti-diagonals, then the $h+v$ horizontal/vertical lines meet $D_r$ in at most $h+v$ points, so at least $\max\{0,(r-1)-(h+v)\}$ points of $D_r$ must lie on sunny lines. Choosing the $d$ anti-diagonals with largest $r$ minimizes the total sunny demand; summing gives
+$$\text{(points forced onto sunny lines)}\ \ge\ \sum_{r=2}^{(k+h+v)+1}\max\{0,(r-1)-(h+v)\}=1+2+\cdots+k=\frac{k(k+1)}2.$$
+
+4) Peeling by degree: forcing anti-diagonals, rows and columns.
+
+Lemma 3 (anti-diagonal forcing). Let $L_1,\dots,L_N$ be distinct lines, and $P(x,y):=\prod_{i=1}^N L_i(x,y)$. If $P$ vanishes on $\mathcal T_N$, then letting $d$ be the number of anti-diagonal factors among the $L_i$ and $m:=N-d$, the anti-diagonals $x+y=r$ for all $r\in\{m+2,\dots,N+1\}$ must be among the $L_i$. Moreover, after division by $\prod_{r=m+2}^{N+1}(x+y-r)$ one obtains a product $P_1$ of $m$ lines that vanishes on $\mathcal T_m$.
+
+Proof. For fixed $r$, $x\mapsto P(x,r-x)$ has degree $m$ (each non-anti-diagonal factor contributes degree $1$). Since $P$ vanishes at $x=1,\dots,r-1$, if $r-1>m$ the univariate polynomial $P(x,r-x)$ is identically zero, forcing $x+y-r$ to divide $P$. This holds for each $r\in\{m+2,\dots,N+1\}$. On the points with $a+b\le m+1$ the removed factors are nonzero, so the quotient still vanishes there. ∎
+
+Lemma 4 (row/column forcing). Let a product $S$ of $M$ lines vanish on $\mathcal T_M$ and assume it has no anti-diagonal factor. Let $h$ (resp. $v$) be the number of horizontal (resp. vertical) factors; set $p_y:=M-h$ and $p_x:=M-v$.
+- If $M-b+1>p_y$, then $y=b$ divides $S$. Hence the horizontal factors are exactly $y=1,2,\dots,h$, and after division the quotient vanishes on $\{(x,y)\in\mathbb Z_{\ge1}^2: y\ge h+1,\ x+y\le M+1\}$.
+- If $M-a+1>p_x$, then $x=a$ divides $S$. Hence the vertical factors are exactly $x=1,2,\dots,v$, and after division the quotient vanishes on $\{(x,y)\in\mathbb Z_{\ge1}^2: x\ge v+1,\ y\ge h+1,\ x+y\le M+1\}$.
+
+Proof. Fix $b$. Since $S$ has no horizontal factor counted in $p_y$, the specialization $x\mapsto S(x,b)$ has degree $p_y$. Because $S$ vanishes on $\mathcal T_M$, we have $S(x,b)=0$ for $x=1,\dots,M-b+1$. If $M-b+1>p_y$, then $S(x,b)\equiv0$, so $y-b$ divides $S$. Repeating for $b=1,\dots,h$ yields the first assertion. The vertical statement is symmetric. ∎
+
+Applying Lemma 3 to a covering of $\mathcal T_n$ by $n$ lines with exactly $k$ sunny lines, peel off the anti-diagonals $D_{m+2},\dots,D_{n+1}$ and obtain a product of $m:=k+h+v$ lines vanishing on $\mathcal T_m$ with no anti-diagonal factor. Then Lemma 4 peels off the $h$ horizontals $y=1,\dots,h$ and the $v$ verticals $x=1,\dots,v$, leaving precisely the product of the $k$ sunny lines, which vanishes on
+$$\{(x,y)\in\mathbb Z^2:\ x\ge v+1,\ y\ge h+1,\ x+y\le m+1\}.$$
+Translating by $(-v,-h)$, this is a translate of $\mathcal T_k$. Hence there exist $k$ sunny lines covering $\mathcal T_k$ itself.
+
+5) Non-existence for $k\notin\{0,1,3\}$.
+
+From step 4, any configuration with exactly $k$ sunny lines for some $n\ge3$ forces the existence of $k$ sunny lines covering $\mathcal T_k$. By Corollary 2, this is possible only for $k\in\{1,3\}$. Together with the trivial case $k=0$ and the constructions in step 1, the only feasible values are $k\in\{0,1,3\}$.
+
+This completes the classification. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+In Lemma 1, the conclusion "|ℓ∩T_m| ≤ ceil(m/|b−a|) ≤ floor((m+1)/2)" is incorrect: the inequality ceil(m/|b−a|) ≤ floor((m+1)/2) fails when |b−a|=1 (giving m ≤ floor((m+1)/2)), so the claimed general bound (used for even m in Corollary 2) is unjustified.
+
+----------------------------------------

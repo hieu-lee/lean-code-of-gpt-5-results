@@ -1,0 +1,1 @@
+(Implicit step is a discrete convexifier for GD.) Fix convex L-smooth f and any \eta\in(0,2/L]. Define the hybrid scheme x_{n+1}=x_n-\eta\nabla f(x_n), z_{n+1}=z_n-\eta\nabla f(z_{n+1}) with z_0=x_0, and the mixed curve c_n:=\tfrac12(f(x_n)+f(z_n)). Then n\mapsto c_n is convex for all n.

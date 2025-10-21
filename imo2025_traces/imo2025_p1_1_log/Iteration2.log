@@ -1,0 +1,62 @@
+========================================
+Iteration 2 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** For every integer $n\ge 3$, the possible values of $k\in\{0,1,\dots,n\}$ for which there exist $n$ distinct lines covering all integer points $(a,b)$ with $a,b\ge 1$, $a+b\le n+1$, and with exactly $k$ sunny lines (i.e., not parallel to $x$–axis, $y$–axis, or $x+y=0$) are precisely
+$$k\in\{0,1,3\}.$$
+
+**Proof.** Denote $$\mathcal T_m:=\{(a,b)\in\mathbb N^2: a,b\ge1,\ a+b\le m+1\}$$ and the anti-diagonals $D_r:=\{(a,b):a+b=r\}$ for $r=2,3,\dots$. We proceed in four steps.
+
+1) Existence for $k\in\{0,1,3\}$.
+- $k=0$: take the $n$ anti-diagonals $D_2,D_3,\dots,D_{n+1}$.
+- $k=1$: take $D_3,\dots,D_{n+1}$ together with the sunny line $y=x$.
+- $k=3$: take $D_5,\dots,D_{n+1}$ and the three sunny lines $y=x$, $y=-2x+5$, $y=-\tfrac12x+\tfrac52$. They cover $\mathcal T_n$ because these three sunny lines exactly cover $\mathcal T_3=D_2\cup D_3\cup D_4$.
+
+2) A sharp bound for sunny lines inside a small triangle.
+
+Lemma 1. Let $m\ge1$. A sunny line meets $\mathcal T_m$ in at most $\lfloor\tfrac{m+1}2\rfloor$ lattice points. Moreover, when $m$ is odd, the lines attaining $\tfrac{m+1}2$ points are precisely
+$$y=x,\quad y=-2x+(m+2),\quad y=-\tfrac12x+\tfrac{m+2}2.$$
+
+Proof. If a line contains two lattice points, it has a primitive direction $(u,v)$ with $\gcd(u,v)=1$. Along lattice points on this line, the sum $a+b$ changes by the constant $\Delta:=u+v\ne0$ (sunny excludes $\Delta=0$). Inside $\mathcal T_m$ the admissible sums are $2,3,\dots,m+1$, an interval of length $m$, so the number $N$ of lattice points in $\mathcal T_m$ on the line satisfies
+$$N\le 1+\Big\lfloor\frac m{\lvert\Delta\rvert}\Big\rfloor.$$
+If $|\Delta|\ge2$ then $N\le1+\lfloor m/2\rfloor=\lfloor(m+1)/2\rfloor$.
+If $|\Delta|=1$ (slopes $-2$ or $-\tfrac12$), a direct truncation check against the triangular boundary shows the unique choices attaining the top value are $y=-2x+(m+2)$ and $y=-\tfrac12x+\tfrac{m+2}2$, each meeting $\mathcal T_m$ in $\lceil\tfrac{m+1}2\rceil$ points. If $\Delta=2$ (slope $+1$), the unique maximizer is $y=x$ with $\lfloor\tfrac{m+1}2\rfloor$ points; any translate hits fewer. This gives both the bound and the uniqueness for odd $m$. ∎
+
+Corollary 2. For $m\ge4$, the set $\mathcal T_m$ cannot be covered by $m$ sunny lines. For $m=2$ this is also impossible, while $m=1$ and $m=3$ are possible.
+
+Proof. For $m=1,3$ explicit coverings were exhibited in step 1. For $m=2$, the three points cannot be covered by two sunny lines: the pair $(1,2),(2,1)$ lies on slope $-1$, and any sunny line through $(1,1)$ misses one of them. For $m\ge4$, if $m=2t$ even then $m\lfloor\tfrac{m+1}2\rfloor=2t\cdot t=2t^2<2t^2+t=|\mathcal T_m|$, contradiction. If $m=2t+1\ge5$ is odd, at most three sunny lines can give $t+1$ points each (by Lemma 1), all others give at most $t$; hence the total is at most $3(t+1)+(m-3)t=2t^2+t+3<|\mathcal T_m|$. ∎
+
+3) A universal lower bound on what sunny lines must cover.
+
+Let a covering of $\mathcal T_n$ by $n$ lines contain exactly $k$ sunny lines, and let the numbers of non-sunny horizontals, verticals, and anti-diagonals be $h$, $v$, and $d$, respectively, so $h+v+d=n-k$. Consider the anti-diagonals $D_r$ with $2\le r\le n+1$.
+- If $D_r$ itself is one of the $d$ chosen anti-diagonals, all its $r-1$ points are already covered.
+- Otherwise, the $h+v$ horizontal/vertical lines can cover on $D_r$ at most $h+v$ points (each meets $D_r$ in at most one lattice point), so at least $\max\{0,(r-1)-(h+v)\}$ points of $D_r$ must be covered by sunny lines.
+
+To minimize the total burden on the sunny lines, we should select as the $d$ anti-diagonals the ones with the largest $r$; then the remaining anti-diagonals are exactly $D_2,\dots,D_{m+1}$ with $m:=n-d$. Consequently, the number $Q$ of points that must be covered by the $k$ sunny lines is at least
+$$Q\;\ge\;\sum_{r=2}^{m+1}\max\{0,(r-1)-(h+v)\}
+\;=\;\sum_{s=1}^{m}\max\{0,s-(h+v)\}
+\;=\;\frac{(m-(h+v))(m-(h+v)+1)}2.$$
+But $m-(h+v)=n-d-(h+v)=n-(h+v+d)=k$, so
+$$Q\;\ge\;\frac{k(k+1)}2.$$
+In words: no matter how the non-sunny lines are chosen, the $k$ sunny lines are forced to cover at least $\tfrac{k(k+1)}2$ lattice points.
+
+4) Non-existence for $k\notin\{0,1,3\}$.
+
+Fix $k\ge0$ and suppose a covering by $n$ lines with exactly $k$ sunny lines exists. By step 3, these $k$ sunny lines must cover at least $\tfrac{k(k+1)}2$ points. On the other hand, to make this task as easy as possible, we may disregard all non-sunny lines and keep only the $d:=n-k$ anti-diagonals $D_{k+2},\dots,D_{n+1}$; this choice leaves exactly $\mathcal T_k$ to be covered by the $k$ sunny lines, and $|\mathcal T_k|=\tfrac{k(k+1)}2$ equals the lower bound just obtained. Therefore a necessary condition for the existence of a configuration with exactly $k$ sunny lines is that $\mathcal T_k$ be coverable by $k$ sunny lines.
+
+By Corollary 2, this is possible if and only if $k\in\{1,3\}$; together with the trivial case $k=0$ from step 1, we conclude that only $k\in\{0,1,3\}$ can occur.
+
+Combining steps 1 and 4 finishes the proof. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Lemma 1’s uniqueness claim is false as stated: it says that when m is odd, the only sunny lines attaining (m+1)/2 points are y=x, y=-2x+(m+2), and y=-(1/2)x+(m+2)/2, but for m=1 the set T1={(1,1)} is met by infinitely many sunny lines, so uniqueness fails.
+
+----------------------------------------

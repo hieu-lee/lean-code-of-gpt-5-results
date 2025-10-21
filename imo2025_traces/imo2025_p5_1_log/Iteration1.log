@@ -1,0 +1,82 @@
+========================================
+Iteration 1 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** Let $\lambda>0$ be fixed. In the inekoalaty game:
+- If $\lambda>\tfrac1{\sqrt2}$, Alice has a winning strategy.
+- If $\lambda<\tfrac1{\sqrt2}$, Bazza has a winning strategy.
+- If $\lambda=\tfrac1{\sqrt2}$, neither player has a winning strategy (perfect play can force a draw).
+
+**Proof.** Let $S_n:=\sum_{i=1}^n x_i$ and $Q_n:=\sum_{i=1}^n x_i^2$.
+- On odd $n=2k-1$, a legal move must satisfy $x_{2k-1}\ge0$ and $S_{2k-1}\le \lambda(2k-1)$.
+- On even $n=2k$, a legal move must satisfy $x_{2k}\ge0$ and $Q_{2k}\le 2k$.
+
+We analyze by cases on $\lambda$.
+
+1) Alice wins for $\lambda>\tfrac1{\sqrt2}$.
+
+Fix any $\varepsilon\in(0,\,2\lambda-\sqrt2)$. Alice uses the waiting–strike strategy:
+- On every odd move she plays $x_{2j-1}=0$ until the first odd index $2k-1$ for which
+$$
+S_{2k-2}\le \lambda(2k-1)-(\sqrt2+\varepsilon).
+$$
+- At that moment she plays $x_{2k-1}=\sqrt2+\varepsilon$.
+
+Why does such a $k$ exist? While Alice plays zeros on odd moves, before Bazza’s even move $2j$ we have $Q_{2j-1}=Q_{2j-2}\le 2j-2$, hence $x_{2j}\le \sqrt{2j-Q_{2j-1}}\le\sqrt2$. Therefore for all $k$,
+$$
+S_{2k-2}=\sum_{j=1}^{k-1}x_{2j}\le (k-1)\sqrt2.
+$$
+Since $2\lambda>\sqrt2$, for all sufficiently large $k$ we have $(k-1)\sqrt2\le \lambda(2k-1)-(\sqrt2+\varepsilon)$, so the desired $k$ exists. At that $k$ the odd move $x_{2k-1}=\sqrt2+\varepsilon$ is legal (its addition keeps $S_{2k-1}\le\lambda(2k-1)$), and then
+$$
+Q_{2k-1}\ge Q_{2k-2}+x_{2k-1}^2\ge (2k-2)+(\sqrt2+\varepsilon)^2>2k.
+$$
+Thus Bazza cannot move at turn $2k$, so Alice wins.
+
+2) Bazza wins for $\lambda<\tfrac1{\sqrt2}$.
+
+Bazza adopts the saturating-squares strategy: on each even move $2k$ he plays
+$$
+x_{2k}=\sqrt{\,2k-Q_{2k-1}\,},
+$$
+so $Q_{2k}=2k$. Define $y_k:=x_{2k}\in[0,\sqrt2]$. If ever $y_k>2\lambda$, then at the next odd turn $2k+1$ Alice would need $x_{2k+1}\le \lambda(2k+1)-S_{2k}\le 2\lambda-y_k<0$, which is impossible; hence Bazza would win immediately. Therefore it suffices to show that under this strategy and $\lambda<\tfrac1{\sqrt2}$, one must have $y_k>2\lambda$ for some $k$.
+
+When Alice plays at odd turn $2k-1$, let $x_{2k-1}\in[0,\infty)$ be her choice. Then by construction
+$$
+y_k=\sqrt{2-x_{2k-1}^2}=:f(y_{k-1})\quad\text{with}\quad f(y):=\sqrt{2-(2\lambda-y)^2}.
+$$
+Let $y_\pm:=\lambda\pm\sqrt{1-\lambda^2}$ be the (real) fixed points of $f$ (note $\lambda<1$ here). A direct algebraic identity (obtained from $\sqrt A-\sqrt B=(A-B)/(\sqrt A+\sqrt B)$ together with $y_+^2=2-(2\lambda-y_+)^2$) gives, for all $y\in[0,\sqrt2]$,
+$$
+ y_+-f(y)=\frac{(y_+-y)\,(y+y_+-4\lambda)}{f(y)+y_+}.
+$$
+If in addition $y\le 2\lambda$, then $y+y_+-4\lambda\le y_+-2\lambda$ and $f(y)+y_+\ge y_+$, so
+$$
+0\le y_+-f(y)\le \frac{y_+-2\lambda}{y_+}\,(y_+-y).
+$$
+Set $\rho:=\dfrac{y_+-2\lambda}{y_+}=\dfrac{\sqrt{1-\lambda^2}-\lambda}{\lambda+\sqrt{1-\lambda^2}}\in(0,1)$ for $\lambda<\tfrac1{\sqrt2}$. Hence, as long as $y_k\le 2\lambda$,
+$$
+0\le y_+-y_{k+1}\le \rho\,(y_+-y_k).
+$$
+If $y_k\le 2\lambda$ for all $k$, iterating yields $0<y_+-y_k\le \rho^{k-1}(y_+-y_1)\to0$, i.e. $y_k\to y_+$. But here $y_+>2\lambda$ (equivalent to $\lambda<1/\sqrt2$), so for all sufficiently large $k$ we must have $y_k>2\lambda$, a contradiction. Therefore some $k$ satisfies $y_k>2\lambda$, and Bazza wins at the next Alice turn.
+
+3) The boundary $\lambda=\tfrac1{\sqrt2}$ is a draw with perfect play.
+
+Exhibit a perpetual play. Let Alice play $x_{2k-1}=0$ for all $k$, and let Bazza play $x_{2k}=\sqrt{\,2k-Q_{2k-1}\,}=\sqrt2$. Then for all $k$,
+$$
+S_{2k}=k\sqrt2\le \tfrac1{\sqrt2}(2k+1)=\lambda(2k+1),\qquad Q_{2k}=2k,
+$$
+so every move is legal forever and no one wins. Consequently, at $\lambda=1/\sqrt2$ neither player has a winning strategy.
+
+Combining the three cases proves the claim. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Incorrect inequality in Part 1: From Q_{2j-1}=Q_{2j-2}≤2j−2 it does not follow that x_{2j}≤√(2j−Q_{2j-1})≤√2; in fact √(2j−Q_{2j-1})≥√2, so x_{2j} need not be ≤√2. Thus the bound S_{2k-2}≤(k−1)√2 and the ensuing existence of such k are unjustified.
+
+----------------------------------------

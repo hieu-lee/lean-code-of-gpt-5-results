@@ -1,0 +1,1 @@
+For every $\varepsilon_0\in(0,1/6]$, there exist a graph $G$ on $n=3$ vertices and a subgraph $F\subseteq G$ with $F=\emptyset$ such that $\delta(G)\ge (1/2+\varepsilon_0)n$ and $G-F$ does not admit an NSD 3-edge-weighting that is 1-locally-reconfigurable.

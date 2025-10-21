@@ -1,0 +1,1 @@
+Conjecture 12 (Bipartite two-phase correction with tolerance-1 succeeds). There exists a universal C>0 and an unbounded function g such that for every graph G=C_n⊔K_{1,Δ} and every initial weighting ω:E(G)→{1,2,3}, if Stage 2 resamples the edges in Bad_1(ω) (instead of Bad_2(ω)), then the expected number resampled is at most C·|E(G)|/g(Δ).

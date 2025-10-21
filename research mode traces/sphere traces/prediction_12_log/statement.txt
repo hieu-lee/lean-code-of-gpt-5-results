@@ -1,0 +1,1 @@
+Explicit sparse subsequence achieving quadratic-order lattice packing. There exist absolute c,C>0 and an explicit infinite sequence of dimensions {n_k} with a deterministic, polynomial-time construction of unimodular lattices L_{n_k}⊂R^{n_k} such that Δ(L_{n_k}) ≥ c n_k^{2} 2^{-n_k} and (1/vol_{n_k}(V(L_{n_k}))) ∫_{V(L_{n_k})} ||x||^2 dx ≤ C n_k.

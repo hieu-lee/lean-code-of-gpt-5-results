@@ -1,0 +1,5 @@
+[
+  "Conjecture 1 (Universal 2/3-fraction strong separation). There exists an absolute ε_0=1/3 such that every nice graph G admits a 3-edge-weighting ω with |Bad_1(ω)|≤ε_0|E(G)|. Equivalently, every nice G has an ℓ-slack NSD 3-edge-weighting with ℓ=1 on at least a 2/3-fraction of its edges, and this is tight already for G=C_3.",
+  "Conjecture 11 (Arboricity deletion at the sharp threshold). There exists C_0>0 such that for every ε>0 there are graphs G with arbitrarily large Δ(G) for which the following holds: deleting any subgraph F with arb(F)≤(C_0−ε) does not guarantee that G−F admits an NSD 3-edge-weighting, while deleting some F with arb(F)≤(C_0+ε) always suffices. In particular, the constant in the known positive arboricity-deletion theorem is optimal up to ε.",
+  "Conjecture 13 (Minimal local obstruction to NSD-3 in high girth). There exists g_0 such that for every nice graph G with girth at least g_0, every 3-edge-weighting ω with |Bad(ω)| minimized among all 3-edge-weightings satisfies that Bad(ω) is a matching. Equivalently, in high-girth graphs the only unavoidable equal-sum edges can be made pairwise disjoint."
+]

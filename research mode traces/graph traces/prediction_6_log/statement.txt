@@ -1,0 +1,1 @@
+Conjecture 5 (Triangle-sparse graphs admit global 2-slack after deleting o(|E|) edges). For every ε>0 there exists δ=δ(ε)>0 such that every nice triangle-sparse graph G admits a set F⊆E(G) with |F|≤ε|E(G)| so that G−F has an ℓ-slack NSD 3-edge-weighting with ℓ=1 (i.e., |s(u)−s(v)|≥2 on all edges of G−F).

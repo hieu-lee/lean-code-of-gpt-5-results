@@ -1,0 +1,100 @@
+[
+  {
+    "index": 0,
+    "statement": "(EG convexity up to the stability limit.) Let f be convex and L-smooth. For extragradient with any stepsize \\eta\\in(0,2/L], the optimization curve is convex: the sequence n\\mapsto f(x_n) satisfies \\delta_n\\ge 0 for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 1,
+    "statement": "(Implicit step convexifies the discrete curve.) Let f be convex and L-smooth. For the implicit (backward Euler) method x_{n+1}=x_n-\\eta\\nabla f(x_{n+1}) with any \\eta>0, the sequence n\\mapsto f(x_n) is convex: \\delta_n\\ge 0 for all n. Moreover, if f is \\mu-strongly convex, then (\\Delta_n) is strictly decreasing unless x_n is optimal.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 2,
+    "statement": "(Convexity of a Moreau-smoothed evaluation along GD.) Let f be convex and L-smooth and fix \\eta\\in(0,2/L]. There exists a universal \\bar\\gamma(\\theta)\\in(0,\\infty) with \\bar\\gamma(\\theta)=\\Theta\\!\\big((2-\\theta)/L\\big) as \\theta\\uparrow2 such that, for every \\gamma\\in(0,\\bar\\gamma(\\theta)], the sequence n\\mapsto e_\\gamma(f)(x_n^{\\text{GD}}) is convex in n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 3,
+    "statement": "(Two-point time-averaging restores convexity beyond 1.75.) Let f be convex and L-smooth and fix \\eta\\in(0,2/L]. There exists a sharp threshold \\lambda_\\star(\\theta)\\in[0,1/2) with \\lambda_\\star(\\theta)=0 for \\theta\\le 1.75 and \\lambda_\\star(\\theta)\\downarrow0 as \\theta\\downarrow1.75 such that for all \\lambda\\in[\\lambda_\\star(\\theta),1-\\lambda_\\star(\\theta)] the 2-term averaged curve n\\mapsto M^{(\\lambda)}(a)_n=(1-\\lambda)f(x_n)+\\lambda f(x_{n+1}) is convex for every convex L-smooth f and every initialization, while for any fixed \\lambda\\notin[\\lambda_\\star(\\theta),1-\\lambda_\\star(\\theta)] there exist counterexamples.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 4,
+    "statement": "(Adaptive curvature-aware steps ensure convexity up to 2/L.) Let f be convex and L-smooth, and suppose along the GD trajectory the local smoothness surrogate L_n:=\\sup_{t\\in[0,1]}\\|\\nabla^2 f(x_n+t(x_{n+1}-x_n))\\| satisfies L_{n+1}\\le L_n for all n (nonincreasing local curvature). Then for any constant \\eta\\in(0,2/L_0], the GD loss curve is convex: \\delta_n\\ge 0 for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 5,
+    "statement": "(Gradient-norm convexity in the conservative regime.) Let f be convex and L-smooth. For GD with \\eta\\in(0,1/L], the sequence n\\mapsto\\|\\nabla f(x_n)\\|^2 is convex: \\|\\nabla f(x_{n+2})\\|^2-2\\|\\nabla f(x_{n+1})\\|^2+\\|\\nabla f(x_n)\\|^2\\ge 0 for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 6,
+    "statement": "(Windowed convexity for GD near the stability edge.) Let f be convex and L-smooth and fix \\eta\\in(0,2/L]. Then there exists an integer window size W_\\star(\\theta)=O\\big(1/(2-\\theta)\\big) such that the W_\\star-point running average b_n:=\\tfrac{1}{W_\\star}\\sum_{j=0}^{W_\\star-1} f(x_{n+j}) is convex in n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 7,
+    "statement": "(Diagonal preconditioning criterion.) Let f be convex and coordinate-wise L_i-smooth (i.e., \\partial_i\\nabla f is L_i-Lipschitz). Consider preconditioned GD x_{n+1}=x_n-D\\nabla f(x_n) with diagonal D=\\operatorname{diag}(d_i), d_i>0, and define \\Theta:=\\max_i L_i d_i. If \\Theta\\in(0,1.75], then for every convex coordinate-wise smooth f and any initialization, the optimization curve n\\mapsto f(x_n) is convex; furthermore, for every \\Theta\\in(1.75,2), there exist convex coordinate-wise smooth f and initializations where convexity fails even though f(x_n)\\searrow f_*.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 8,
+    "statement": "(Exact line-search GD yields convex values.) Let f be convex and L-smooth. For exact line-search along negative gradient, x_{n+1}=x_n-\\eta_n\\nabla f(x_n) with \\eta_n:=\\operatorname*{argmin}_{\\eta\\ge0} f(x_n-\\eta\\nabla f(x_n)), the sequence n\\mapsto f(x_n) is convex for all initializations.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 9,
+    "statement": "(EG monotonicity of one-step decrease.) Let f be convex and L-smooth. For extragradient with any \\eta\\in(0,2/L], the one-step decreases are nonincreasing: \\Delta_{n+1}\\le \\Delta_n for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 10,
+    "statement": "(Implicit step is a discrete convexifier for GD.) Fix convex L-smooth f and any \\eta\\in(0,2/L]. Define the hybrid scheme x_{n+1}=x_n-\\eta\\nabla f(x_n), z_{n+1}=z_n-\\eta\\nabla f(z_{n+1}) with z_0=x_0, and the mixed curve c_n:=\\tfrac12(f(x_n)+f(z_n)). Then n\\mapsto c_n is convex for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 11,
+    "statement": "(Lookahead with small pull guarantees convexity.) Let f be convex and L-smooth. Consider lookahead with inner GD step-size \\eta\\in(0,2/L] and outer parameters k\\in\\mathbb{N}, \\alpha\\in(0,\\bar\\alpha(\\theta,k)] with z_{t+1}=(1-\\alpha)z_t+\\alpha x_{t,k}, where x_{t,0}=z_t and x_{t,j+1}=x_{t,j}-\\eta\\nabla f(x_{t,j}). There exists \\bar\\alpha(\\theta,k)>0 with \\bar\\alpha(\\theta,k)=\\Theta\\!\\big((2-\\theta)/k\\big) as \\theta\\uparrow2 such that t\\mapsto f(z_t) is convex for every convex L-smooth f and initialization.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 12,
+    "statement": "(Moreau-envelope descent curve convexity under GD on f.) Let f be convex and L-smooth, and fix \\eta\\in(0,2/L]. Let y_n:=x_n-\\eta\\nabla f(x_n) be the GD predictor and define m_n:=e_{\\eta}(f)(y_n). Then n\\mapsto m_n is convex for all n.",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  },
+  {
+    "index": 13,
+    "statement": "(Restart-on-curvature rule ensures convexity without L.) Let f be convex with L-Lipschitz gradient unknown. Consider GD with an adaptive stepsize \\eta_n obtained by doubling until \\Delta_{n-1}\\ge\\Delta_n, and halving otherwise. This rule produces a piecewise-constant stepsize sequence with finitely many halving events and guarantees global convexity of n\\mapsto f(x_n).",
+    "is_novel": true,
+    "matched_statement": "",
+    "matched_url": ""
+  }
+]

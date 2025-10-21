@@ -1,0 +1,1 @@
+Randomized inverse-polynomial construction. There exist absolute c,C>0 and a randomized algorithm running in time poly(n) which, on input n, outputs with probability at least c n^{-C} a basis of a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n}.

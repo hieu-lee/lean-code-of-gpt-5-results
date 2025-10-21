@@ -1,0 +1,1 @@
+(Convexity of a Moreau-smoothed evaluation along GD.) Let f be convex and L-smooth and fix \eta\in(0,2/L]. There exists a universal \bar\gamma(\theta)\in(0,\infty) with \bar\gamma(\theta)=\Theta\!\big((2-\theta)/L\big) as \theta\uparrow2 such that, for every \gamma\in(0,\bar\gamma(\theta)], the sequence n\mapsto e_\gamma(f)(x_n^{\text{GD}}) is convex in n.

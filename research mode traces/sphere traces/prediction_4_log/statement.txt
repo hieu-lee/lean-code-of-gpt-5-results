@@ -1,0 +1,1 @@
+Dual successive minima growth. There exist absolute c_0,c_1>0 such that for every n≥2 there is a unimodular lattice L with Δ(L) ≥ c_0 n^{2} 2^{-n} and for all 1≤k≤⌊c_1 n⌋ one has λ_k(L^{*}) ≥ c_0 √k.

@@ -1,0 +1,8 @@
+[
+  "Let f be convex and L-smooth. Gradient descent with step size η ∈ (0, 1.75⁄L] induces a convex optimization curve: the mapping n ↦ f(xₙ) is convex (equivalently, the sequence f(xₙ) − f(xₙ₊₁) is non-increasing).",
+  "For any L > 0 there exists a convex L-smooth function and initialization such that for every step-size η ∈ (1.75⁄L, 2⁄L), the gradient descent optimization curve is not convex (despite converging and monotonically decreasing).",
+  "For convex L-smooth f and η ∈ (0, 2⁄L], the sequence of gradient norms {‖∇f(xₙ)‖} is non-increasing.",
+  "For convex L-smooth f, the gradient flow optimization curve t ↦ f(x(t)) is always convex.",
+  "For convex L-smooth f, under gradient flow, the function t ↦ ‖∇f(x(t))‖ is non-increasing.",
+  "Fix any L>0 and any relative noise level \\(δ\\in(0,1)\\). There does not exist a positive universal step size \\(η_{max}(δ,L)>0\\) with the property that for every (even one-dimensional) convex L-smooth quadratic f, every nonzero initialization x₀≠0, and every sequence of inexact-gradient noises satisfying \\(\\|eₙ\\|≤δ\\|∇f(xₙ)\\|\\), the inexact gradient descent iterates \\(xₙ₊₁=xₙ−η(∇f(xₙ)+eₙ)\\) produce a convex sequence of function values n ↦ f(xₙ) for every choice of step size 0<η≤ηₘₐₓ(δ,L). In particular, no nonzero universal convexity-preserving step-size depending only on δ and L (and valid for all one-dimensional convex L-smooth quadratics and all nonzero initializations) exists when δ>0."
+]

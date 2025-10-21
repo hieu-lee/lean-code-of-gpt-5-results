@@ -1,0 +1,1 @@
+(Moreau-envelope descent curve convexity under GD on f.) Let f be convex and L-smooth, and fix \eta\in(0,2/L]. Let y_n:=x_n-\eta\nabla f(x_n) be the GD predictor and define m_n:=e_{\eta}(f)(y_n). Then n\mapsto m_n is convex for all n.

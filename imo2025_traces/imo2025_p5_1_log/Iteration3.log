@@ -1,0 +1,101 @@
+========================================
+Iteration 3 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** Fix $\lambda>0$. In the inekoalaty game:
+- If $\lambda>\tfrac1{\sqrt2}$, Alice has a winning strategy.
+- If $\lambda<\tfrac1{\sqrt2}$, Bazza has a winning strategy.
+- If $\lambda=\tfrac1{\sqrt2}$, optimal play yields a draw.
+
+**Proof.** Let $S_n:=\sum_{i=1}^n x_i$ and $Q_n:=\sum_{i=1}^n x_i^2$.
+- On odd $n=2k-1$, a legal move requires $x_{2k-1}\ge0$ and $S_{2k-1}\le \lambda(2k-1)$.
+- On even $n=2k$, a legal move requires $x_{2k}\ge0$ and $Q_{2k}\le 2k$.
+
+1) Alice wins for $\lambda>\tfrac1{\sqrt2}$.
+
+Fix $\varepsilon>0$. Alice plays $x_{2j-1}=0$ on each odd turn until the first odd index $2k-1$ at which
+$$
+S_{2k-2}\le \lambda(2k-1)-\bigl(\sqrt{2k}+\varepsilon\bigr),
+$$
+then she plays $x_{2k-1}=\sqrt{2k}+\varepsilon$.
+
+Legality of the waiting zeros: while Alice plays zeros on odd turns, we have for every $j\ge1$
+$$
+Q_{2j-2}=\sum_{t=1}^{j-1}x_{2t}^2\le 2j-2.
+$$
+By Cauchy–Schwarz,
+$$
+S_{2j-2}=\sum_{t=1}^{j-1}x_{2t}\le\sqrt{(j-1)\sum_{t=1}^{j-1}x_{2t}^2}\le \sqrt{(j-1)(2j-2)}=\sqrt2\,(j-1).
+$$
+Since $2\lambda>\sqrt2$, for every $j\ge1$ we have $\sqrt2\,(j-1)<\lambda(2j-1)$, hence choosing $x_{2j-1}=0$ is always legal.
+
+Existence of the decisive $k$: the same bound yields
+$$
+\lambda(2k-1)-S_{2k-2}\ge (2\lambda-\sqrt2)k+(\sqrt2-\lambda)\xrightarrow[k\to\infty]{}\infty,
+$$
+so for all sufficiently large $k$ we have $\lambda(2k-1)-S_{2k-2}>\sqrt{2k}+\varepsilon$; pick the least such $k$. Then $x_{2k-1}=\sqrt{2k}+\varepsilon$ is legal and
+$$
+Q_{2k-1}=Q_{2k-2}+x_{2k-1}^2\ge x_{2k-1}^2=(\sqrt{2k}+\varepsilon)^2>2k.
+$$
+Thus no nonnegative $x_{2k}$ can make $Q_{2k}\le 2k$, so Bazza has no legal move at turn $2k$ and Alice wins.
+
+2) Bazza wins for $\lambda<\tfrac1{\sqrt2}$.
+
+Bazza uses the saturating-squares strategy
+$$
+ x_{2k}=\sqrt{\,2k-Q_{2k-1}\,},\qquad\text{so }\; Q_{2k}=2k\quad(\forall k\ge1).
+$$
+Let $y_k:=x_{2k}$ and $u_k:=x_{2k-1}$. Then for each $k$,
+$$
+ y_k=\sqrt{2-u_k^2},\quad\text{equivalently}\quad u_k^2+y_k^2=2.
+$$
+If $y_k>2\lambda$ for some $k$, then at the next odd move $2k+1$ the available budget satisfies
+$$
+ \lambda(2k+1)-S_{2k}\le \lambda(2k+1)-\bigl(\lambda(2k-1)+y_k\bigr)=2\lambda-y_k<0,
+$$
+so Alice cannot move and loses immediately. Hence to survive, Alice must keep $y_k\le 2\lambda$ for every $k$.
+
+Under this survival condition, Alice’s best way to avoid $y_{k+1}>2\lambda$ is to maximize $u_{k+1}$ on each odd turn. The largest legal choice at turn $2k+1$ is
+$$
+ u_{k+1}^{\max}=\lambda(2k+1)-S_{2k}=igl(\lambda(2k-1)-S_{2k-1}\bigr)+2\lambda-y_k=\delta_k+2\lambda-y_k,\quad \delta_k:=\lambda(2k-1)-S_{2k-1}\ge0.
+$$
+This choice minimizes $y_{k+1}=\sqrt{2-u_{k+1}^2}$. Therefore it suffices to analyze the policy in which Alice always plays this maximizing move. In particular, when she also saturates her previous odd constraints (so that $\delta_k\equiv0$), the evolution is autonomous:
+$$
+ y_{k+1}=f(y_k):=\sqrt{2-(2\lambda-y_k)^2}\qquad\text{for all }y_k\in[0,2\lambda].
+$$
+Let $y_\pm:=\lambda\pm\sqrt{1-\lambda^2}$ be the fixed points of $f$; for $\lambda<1/\sqrt2$ one has $y_+>2\lambda$. The identity
+$$
+ f(y)-y_+=\frac{(y-y_+)\,(4\lambda-y-y_+)}{f(y)+y_+}
+$$
+implies, for all $y\in[0,2\lambda]$,
+$$
+ |y_+-f(y)|\le \frac{\max\{y_+-2\lambda,\,|4\lambda-y_+|\}}{\,y_+\,}\,|y_+-y|=:\rho\,|y_+-y|,
+$$
+since $f(y)+y_+\ge y_+$ and $\max\{y_+-2\lambda,|4\lambda-y_+|\}<y_+$ when $\lambda<1/\sqrt2$. Hence $\rho\in(0,1)$ and $f$ is a contraction on $[0,2\lambda]$ with attracting fixed point $y_+>2\lambda$.
+
+Now consider the trajectory starting from $y_1=\sqrt{2-x_1^2}\in(0,\sqrt2]$.
+- If $y_1>2\lambda$, Bazza already wins at Alice’s next move.
+- Otherwise $y_1\le 2\lambda$, and iterating $f$ yields $y_k\to y_+>2\lambda$. Consequently, for some $k$ we have $y_k>2\lambda$, forcing Alice’s loss at the next odd turn. Therefore Bazza has a winning strategy for $\lambda<1/\sqrt2$.
+
+3) The boundary $\lambda=\tfrac1{\sqrt2}$ is a draw with optimal play.
+
+Let Alice play $x_{2k-1}=0$ for all $k$, and Bazza play $x_{2k}=\sqrt{\,2k-Q_{2k-1}\,}=\sqrt2$. Then, for all $k$, $Q_{2k}=2k$ and
+$$
+ S_{2k}=k\sqrt2\le \frac1{\sqrt2}(2k+1)=\lambda(2k+1),
+$$
+so every move remains legal and the game continues indefinitely. Hence neither player can force a win at $\lambda=1/\sqrt2$.
+
+Combining the three cases completes the proof. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+In Part 2, the budget inequality is reversed: since S_{2k-1} ≤ λ(2k−1), we have S_{2k} ≤ λ(2k−1)+y_k, hence λ(2k+1)−S_{2k} ≥ 2λ−y_k (not ≤); therefore y_k>2λ does not imply Alice has no legal move at turn 2k+1.
+
+----------------------------------------

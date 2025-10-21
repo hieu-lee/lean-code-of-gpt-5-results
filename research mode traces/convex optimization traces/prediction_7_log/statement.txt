@@ -1,0 +1,1 @@
+(Adaptive curvature-aware steps ensure convexity up to 2/L.) Let f be convex and L-smooth, and suppose along the GD trajectory the local smoothness surrogate L_n:=\sup_{t\in[0,1]}\|\nabla^2 f(x_n+t(x_{n+1}-x_n))\| satisfies L_{n+1}\le L_n for all n (nonincreasing local curvature). Then for any constant \eta\in(0,2/L_0], the GD loss curve is convex: \delta_n\ge 0 for all n.

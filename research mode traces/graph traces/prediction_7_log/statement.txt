@@ -1,0 +1,1 @@
+Conjecture 6 (Threshold for random subgraphs of high-degree hosts). There exists an absolute c>0 such that for every family of nice graphs G with Δ(G)→∞ and |V(G)|≤Δ(G)^{O(1)}, if p≥c·(logΔ(G))/Δ(G), then a.a.s. G_p is nice and hence admits an NSD 3-edge-weighting.

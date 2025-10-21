@@ -1,0 +1,1 @@
+Conjecture 14 (Sparse robust NSD in dense host graphs). For every ε>0 there exists C=C(ε)>0 such that for every n-vertex graph G with δ(G)≥(1/2+ε)n and every subgraph F⊆G with arb(F)≤C and Δ(F)≤C·log n, the graph G−F admits an NSD 3-edge-weighting that is 1-locally-reconfigurable.

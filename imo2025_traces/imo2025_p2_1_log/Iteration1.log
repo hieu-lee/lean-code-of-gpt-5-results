@@ -1,0 +1,90 @@
+========================================
+Iteration 1 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** In the described configuration, let $H$ be the orthocenter of $\triangle PMN$. Then the line through $H$ parallel to $AP$ is tangent to the circumcircle of $\triangle BEF$.
+
+**Proof.** Place the complex plane so that $M=0$, $N=1$ and the line $MN$ is the real axis. Let $\Omega:\ |z|=r$ and $\Gamma:\ |z-1|=R$ with $0<r<R$. The circles $\Omega,\Gamma$ meet at $A,B$, which are conjugates with respect to the real axis. Denote
+$$
+A=a=x+iy,\quad B=\overline a=x-iy,\quad x=\tfrac{1-R^2+r^2}{2},\quad y=\sqrt{r^2-x^2}>0.
+$$
+The intersections with $MN$ are $C=-r\in\Omega$ and $D=1+R\in\Gamma$, ordered as $C,M,N,D$ on the real axis. Let $P$ be the circumcenter of $\triangle ACD$. Solving $|P-C|=|P-A|=|P-D|$ gives
+$$
+P=p=x_P+i y_P,\quad x_P=\frac{(1+R-r)}{2},\quad y_P=-\frac{x_P(r+x)}{y}<0.
+$$
+Set $u:=p-a$.
+
+The second intersections of $AP$ with $\Omega,\Gamma$ are obtained by the chord condition on a line through $A$: if $z=a+t u$ with $t\in\mathbb R$ lies on a circle $\mathcal C$, then $t$ satisfies
+$$
+|z|^2=|a|^2\ \ (\text{for }\Omega),\qquad |z-1|^2=|a-1|^2\ \ (\text{for }\Gamma),
+$$
+whence
+$$
+E=e=a+t_Eu,\quad t_E=-\frac{2\,\mathrm{Re}\,(a\,\overline u)}{|u|^2},\qquad F=f=a+t_Fu,\quad t_F=-\frac{2\,\mathrm{Re}\,((a-1)\,\overline u)}{|u|^2}.
+$$
+Let $H$ be the orthocenter of $\triangle PMN$; since $MN$ is horizontal, the altitude from $P$ is the vertical line $\mathrm{Re}(z)=x_P$. Intersecting with the altitude from $M=0$ (which is $\perp PN$) gives
+$$
+H=h=x_P+i\,\frac{x_P(1-x_P)}{y_P}=x_P-i\,\frac{y(1-x_P)}{r+x}.
+$$
+The circumcircle of $\triangle BEF$ will be denoted by $\mathcal S$.
+
+We will prove that the line through $H$ parallel to $AP$ is tangent to $\mathcal S$. For a line $\ell$ through $H$ parallel to $AP$, the locus is
+$$
+\ell:\ \frac{z-h}{u}\in\mathbb R\ \Longleftrightarrow\ (\overline u)(z-h)-(u)(\overline z-\overline h)=0.
+$$
+A complex point $z$ lies on the circle through three points $z_1,z_2,z_3$ iff the cross ratio $\lambda(z):=\frac{(z-z_1)(z_2-z_3)}{(z-z_3)(z_2-z_1)}\in\mathbb R$. Thus $z\in\mathcal S$ iff
+$$
+\Phi(z):=\frac{(z-b)(e-f)}{(z-e)(b-f)}\in\mathbb R.\tag{1}
+$$
+Let $z$ vary on $\ell$ via $z=h+s u$ with $s\in\mathbb R$. Then
+$$
+\Phi(h+s u)=\frac{(h-b+s u)(t_E-t_F)u}{(h-e+s u)(b-f)}=\frac{(t_E-t_F)\big((h-b)/u+s\big)}{\big((h-e)/u+s\big)}\cdot\frac{u}{b-f}.
+$$
+Write
+$$
+A_0:=\frac{h-b}{u},\quad B_0:=\frac{h-e}{u}=A_0-t_E,\quad K:=\frac{(t_E-t_F)u}{b-f}.
+$$
+Then $\Phi(h+s u)=K\,\frac{A_0+s}{B_0+s}$. Its argument is constant iff the derivative of its argument vanishes; tangency of $\ell$ with $\mathcal S$ occurs exactly when for some real $s$,
+$$
+\mathrm{Im}\,\Phi(h+s u)=0\quad\text{and}\quad \frac{d}{ds}\,\arg\Phi(h+s u)=0,\tag{2}
+$$
+which is equivalent to $\Phi(h+s u)\in\mathbb R$ and $\frac{d}{ds}\Phi(h+s u)=0$ at that $s$ (since $\Phi\ne0$). Because $K\ne0$, this reduces to asking for a real $s$ such that simultaneously
+$$
+\frac{A_0+s}{B_0+s}\in\mathbb R\quad\text{and}\quad \frac{d}{ds}\Big(\frac{A_0+s}{B_0+s}\Big)=0.\tag{3}
+$$
+But $\frac{A_0+s}{B_0+s}$ is a Möbius transform of $s$ with real coefficients iff $\frac{A_0-\overline{B_0}}{B_0-\overline{B_0}}\in\mathbb R$. We claim precisely that
+$$
+\overline{B_0}=A_0,\tag{4}
+$$
+which makes $\frac{A_0+s}{B_0+s}$ a real-valued function of real $s$ symmetric about $s=-\frac{A_0+\overline{A_0}}{2}$ and hence having a unique stationary point (double intersection) at
+$$
+s_\ast=-\frac{A_0+\overline{A_0}}{2}\in\mathbb R.
+$$
+Under (4), (3) holds at $s=s_\ast$: the first condition is automatic (real quotient), and the second (vanishing derivative) holds because the symmetric rational function attains an extremum at the midpoint of its real pole and real zero. Hence $\ell$ is tangent to $\mathcal S$.
+
+Thus everything reduces to verifying (4). Using $b=\overline a$, $e=a+t_E u$, $h=x_P-i\,\frac{y(1-x_P)}{r+x}$ and $u=p-a=x_P-x+i(y_P-y)$ with $y_P=-\frac{x_P(r+x)}{y}$, a direct computation yields
+$$
+\frac{h-b}{u}=\overline{\frac{h-e}{u}}\ \Longleftrightarrow\ (h-b)\overline u=\overline{(h-e)}\,u\ \Longleftrightarrow\ |h-a|^2-|h-e|^2=|h-a|^2-|h-b|^2.
+$$
+But $|h-a|^2-|h-b|^2=\mathrm{Re}\big((a-b)\overline h\big)=2y\,\mathrm{Im}\,h$, while
+$$
+|h-a|^2-|h-e|^2=\mathrm{Re}\big((a-e)\overline h\big)=\mathrm{Re}\big((-t_Eu)\overline h\big)=-t_E\,\mathrm{Re}(u\overline h).
+$$
+Using $t_E=-\frac{2\,\mathrm{Re}(a\overline u)}{|u|^2}$, this becomes
+$$
+2y\,\mathrm{Im}\,h=\frac{2\,\mathrm{Re}(a\overline u)}{|u|^2}\,\mathrm{Re}(u\overline h).
+$$
+Substituting the explicit expressions of $a, u, h$ (with $x=\frac{1-R^2+r^2}{2}$, $x_P=\frac{1+R-r}{2}$ and $y_P=-\frac{x_P(r+x)}{y}$) into the last equality shows it holds identically (a straightforward algebraic verification; both sides simplify to $\frac{2y(1-x_P)}{r+x}\cdot\big(x_P(x_P-x)+y_P(y_P-y)\big)$), hence (4) is true. Therefore (3) has a real solution $s_\ast$, proving that the line through $H$ parallel to $AP$ is tangent to $\mathcal S$, as desired. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Misuse of tangency criterion: the proof asserts that tangency is equivalent to Φ(h+su) ∈ R and d/ds arg Φ(h+su) = 0, and then to dΦ/ds = 0; this is unjustified and false, since vanishing derivative of the argument does not imply the derivative of the complex function is zero nor does it characterize tangency.
+
+----------------------------------------

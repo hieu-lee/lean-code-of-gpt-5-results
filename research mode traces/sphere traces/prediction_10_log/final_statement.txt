@@ -1,0 +1,2 @@
+Voronoi thin-shell concentration at the quadratic scale. There exists an absolute constant c>0 such that for every n≥3 one can find a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n} for which, if X is uniform in V(L), then for all 0≤ t ≤ 1,
+Pr\big[ | \|\|X\|\| - (\mathbb{E}\|\|X\|\|^2)^{1/2} | ≥ t \sqrt{n} \big] ≤ 2\, e^{-c t^{2} n}.

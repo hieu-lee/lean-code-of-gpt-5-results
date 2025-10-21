@@ -1,0 +1,1 @@
+There exist absolute constants $c_0,c_1>0$ such that for every $n\ge2$ there is a unimodular lattice $L\subset\R^n$ with $\Delta(L) \ge c_0 n^{2} 2^{-n}$ and for all $1\le k\le\lfloor c_1 n\rfloor$ one has $\lambda_k(L) \ge c_0 \sqrt{k}$.

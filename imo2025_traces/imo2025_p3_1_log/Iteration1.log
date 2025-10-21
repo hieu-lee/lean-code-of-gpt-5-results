@@ -1,0 +1,64 @@
+========================================
+Iteration 1 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** The smallest real constant $c$ such that $f(n)\le cn$ for all bonza functions $f:\mathbb N\to\mathbb N$ and all $n\in\mathbb N$ is $c=1$.
+
+**Proof.** Recall that $f$ is bonza if
+$$
+\forall a,b\in\mathbb N:\quad f(a)\mid b^{a}-f(b)^{f(a)}.
+$$
+We proceed through a series of consequences.
+
+1) $f(1)=1$. Indeed, with $(a,b)=(1,1)$ we have
+$$
+f(1)\mid 1-f(1)^{f(1)}.
+$$
+If $f(1)>1$, then $f(1)\mid f(1)^{f(1)}$ implies $1-f(1)^{f(1)}\equiv 1\not\equiv 0\pmod{f(1)}$, a contradiction. Hence $f(1)=1$.
+
+2) For all $a\in\mathbb N$, $f(a)\mid a^{a}$. This is obtained by setting $b=a$:
+$$
+f(a)\mid a^{a}-f(a)^{f(a)}\implies f(a)\mid a^{a}.
+$$
+
+3) If a prime $r$ divides $f(a)$, then $r\mid f(r)$. Indeed, take $b=r$; since $r\mid f(a)$, we have
+$$
+f(a)\mid r^{a}-f(r)^{f(a)}\implies r\mid f(r)^{f(a)}\implies r\mid f(r).
+$$
+
+4) If a prime $p$ divides $f(p)$, then for every $b\in\mathbb N$ we have
+$$
+b\equiv f(b)\pmod p.
+$$
+Proof: from $f(p)\mid b^{p}-f(b)^{f(p)}$ and $p\mid f(p)$ we get $p\mid b^{p}-f(b)^{f(p)}$. Using $x^{p}\equiv x\pmod p$ and inductively $x^{p^{k}}\equiv x\pmod p$ for all integers $x$, we obtain $b\equiv f(b)\pmod p$.
+
+Let $\mathcal P:=\{p\text{ prime}: p\mid f(p)\}$. We consider two cases.
+
+– Case I: $\mathcal P$ is infinite. Fix $b\in\mathbb N$. By (4), $b\equiv f(b)\pmod p$ for all $p\in\mathcal P$. Thus $b-f(b)$ is divisible by infinitely many distinct primes, hence $b-f(b)=0$. Therefore $f(b)=b$ for all $b$, i.e., $f$ is the identity.
+
+– Case II: $\mathcal P$ is finite. Let $L=\prod_{p\in\mathcal P}p$ (with $L=1$ if $\mathcal P=\emptyset$). By (4) we have
+$$
+\forall b\in\mathbb N:\quad f(b)\equiv b\pmod L. \tag{$*$}
+$$
+If $\mathcal P\ne\emptyset$ (so $L>1$), choose $b\equiv 2\pmod L$. Then $(*)$ gives $f(b)\equiv 2\pmod p$ for all $p\in\mathcal P$, so no prime of $\mathcal P$ divides $f(b)$. If $f(b)>1$, let $r$ be a prime divisor of $f(b)$. By (3) (with $a=b$), $r\mid f(r)$, hence $r\in\mathcal P$, contradicting $\gcd(f(b),L)=1$. Thus $f(b)=1$, but then $(*)$ yields $1\equiv 2\pmod p$ for all $p\in\mathcal P$, absurd. Hence $\mathcal P=\emptyset$.
+
+With $\mathcal P=\emptyset$ we have $p\nmid f(p)$ for every prime $p$. Since $f(p)\mid p^{p}$ (from 2)), it follows that $f(p)=1$ for all primes $p$. If there existed $n$ with $f(n)>1$, pick a prime $r\mid f(n)$. Then (3) with $a=n$ gives $r\mid f(r)$, contradicting $f(r)=1$. Hence $f(n)=1$ for all $n$, i.e., $f\equiv 1$.
+
+We have shown that the only bonza functions are $f\equiv 1$ and $f\equiv \operatorname{id}$. In both cases $f(n)\le n$ for all $n$, and equality holds for $f=\operatorname{id}$. Therefore the minimal constant is
+$$
+c=1.
+$$
+∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Flaw in step (4): From p | b^p − f(b)^{f(p)} and p | f(p), it does not follow that b ≡ f(b) (mod p). Using x^p ≡ x (mod p) only yields f(b)^{f(p)} ≡ f(b)^{f(p)/p} (mod p), so the congruence gives b ≡ f(b)^{f(p)/p} (mod p), not b ≡ f(b) in general.
+
+----------------------------------------

@@ -1,0 +1,1 @@
+There exists ε0>0 (for example, ε0=1/6) such that for every δ>0 there is a triangle-sparse graph G with tri(G)≤δ|E(G)| for which, for every F⊆E(G) with |F|≤ε0|E(G)|, the graph G−F admits no 3-edge-weighting ω:E(G−F)→{1,2,3} satisfying |s_ω(u)−s_ω(v)|≥2 on all edges uv∈E(G−F).

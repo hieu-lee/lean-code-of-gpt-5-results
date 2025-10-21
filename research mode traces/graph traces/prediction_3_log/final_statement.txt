@@ -1,0 +1,1 @@
+For the 4-cycle $C_4$ with bipartition $(A,B)$, the parity profiles realized by neighbor-sum-distinguishing 3-edge-weightings are exactly $\{(0,0),(0,1),(1,0)\}$; the profile $(1,1)$ is impossible.

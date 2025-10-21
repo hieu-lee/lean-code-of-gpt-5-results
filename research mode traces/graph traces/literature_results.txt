@@ -1,0 +1,18 @@
+[
+  "(Seed) Every nice graph G admits an NSD 3-edge-weighting: ∃ω:E→{1,2,3} with s_ω(u)≠s_ω(v) for all uv∈E.",
+  "(Keusch, 2024) Every nice graph G admits an NSD 3-edge-weighting ω:E→{1,2,3}.",
+  "(Karoński–Łuczak–Thomason, 2004) If G is 3‑colorable, then G admits an NSD 3‑edge‑weighting ω:E→{1,2,3}.",
+  "(Addario‑Berry–Dalal–McDiarmid–Reed–Thomason, 2007) Every nice graph admits an NSD 30‑edge‑weighting ω:E→[30].",
+  "(Kalkowski–Karoński–Pfender, 2010) Every nice graph admits an NSD 5‑edge‑weighting ω:E→{1,2,3,4,5}.",
+  "(Przybyło, 2021) Every d‑regular graph (d≥2) admits an NSD 4‑edge‑weighting; moreover, for all sufficiently large d (e.g., d≥10^8), an NSD 3‑edge‑weighting exists.",
+  "(Przybyło, 2022) ∃ absolute c>0 such that if δ(G)≥c·logΔ(G), then G admits an NSD 3‑edge‑weighting.",
+  "(Bensmail, 2019) Every 5‑regular graph admits an NSD 4‑edge‑weighting ω:E→{1,2,3,4}.",
+  "(Thomassen–Wu–Zhang, 2016) Every 3‑edge‑connected bipartite graph with at least 3 vertices has an edge‑weighting ω:E→{1,2} with s_ω(u)≠s_ω(v) for all uv∈E.",
+  "(Bensmail–Hocquard–Lajou–Sopena, 2023) For every connected graph |V|≥3, there exists ω:E→{1,2,3} with p_ω(u)≠p_ω(v) for all uv∈E (multiplicative 1–2–3 Conjecture).",
+  "(Kalkowski–Karoński–Pfender, 2013) Let H be a hypergraph with maximum edge size r≥3 and no degenerate edges; then H admits an edge‑proper‑by‑sums weighting ω:𝔈→{1,2,…,max{5,r+1}}.",
+  "(Pan–Yang, 2013) If G is obtained by subdividing each edge of a loopless graph at least once, then G is (1,3)‑ and (2,2)‑total weight choosable.",
+  "(Zhu, 2021) Every nice graph is (1,5)‑total weight choosable.",
+  "(Liang–Wong–Zhu, 2017/2021) Generalized Halin graphs are (1,3)‑total weight choosable.",
+  "(Przybyło, 2019) The Standard (2,2)‑Conjecture holds for graphs with large minimum degree: if δ(G)≥10^6 then E(G) can be decomposed into two subgraphs each admitting an NSD 2‑edge‑weighting.",
+  "(Lu–Zhang, 2016; tree‑coloring relaxation) Every graph admits an edge‑weighting ω:E→{1,2,3} such that the sum‑coloring is a tree‑coloring (hence proper)."
+]

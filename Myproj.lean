@@ -1,0 +1,11 @@
+import Myproj.Definitions
+import Myproj.Axioms
+import Myproj.AsymptoticKCyclicsBetweenCubes
+import Myproj.ThmCarneiroCyclics
+import Myproj.ThmCarneiroSGCyclics
+import Myproj.ThmDusartCyclics
+import Myproj.IMO2025P3.Main
+import Myproj.ThmKFoldOppermann.Main
+import Myproj.ThmLegendreCyclics.Main
+import Myproj.ThmSquares.Main
+import Myproj.ThmFiroozbakhtCyclics3.Main

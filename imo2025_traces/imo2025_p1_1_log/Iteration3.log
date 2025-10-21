@@ -1,0 +1,79 @@
+========================================
+Iteration 3 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** For every integer $n\ge 3$, the possible values of $k\in\{0,1,\dots,n\}$ for which there exist $n$ distinct lines covering all integer points $(a,b)$ with $a,b\ge1$, $a+b\le n+1$, and with exactly $k$ sunny lines (i.e., not parallel to the $x$–axis, the $y$–axis, or the line $x+y=0$) are precisely
+$$k\in\{0,1,3\}.$$
+
+**Proof.** Denote
+$$\mathcal T_m:=\{(a,b)\in\mathbb N^2:\ a,b\ge1,\ a+b\le m+1\}$$
+and the anti-diagonals $D_r:=\{(a,b)\in\mathbb Z^2:a+b=r\}$ for $r\in\mathbb Z$. We argue in four steps.
+
+1) Existence for $k\in\{0,1,3\}$.
+- $k=0$: take the $n$ anti-diagonals $D_2,D_3,\dots,D_{n+1}$.
+- $k=1$: take $D_3,\dots,D_{n+1}$ together with the sunny line $y=x$.
+- $k=3$: take $D_5,\dots,D_{n+1}$ and the three sunny lines $y=x$, $y=-2x+5$, $y=-\tfrac12x+\tfrac52$. These three sunny lines cover exactly $\mathcal T_3=D_2\cup D_3\cup D_4$.
+
+2) A sharp bound for sunny lines inside a small triangle.
+
+Lemma 1. Let $m\ge1$. Any sunny line meets $\mathcal T_m$ in at most $\lfloor\tfrac{m+1}2\rfloor$ lattice points. Moreover, if $m\ge3$ is odd, the only sunny lines meeting $\mathcal T_m$ in exactly $\tfrac{m+1}2$ lattice points are
+$$y=x,\quad y=-2x+(m+2),\quad y=-\tfrac12x+\tfrac{m+2}2.$$
+
+Proof. Let $\ell$ be a sunny line. If $\ell\cap\mathcal T_m$ contains at most one lattice point, the bound is trivial. Otherwise $\ell$ contains a primitive lattice direction $(u,v)\in\mathbb Z^2$ with $\gcd(u,v)=1$, so that the lattice points on $\ell$ form an arithmetic progression in the parameter $t\in\mathbb Z$:
+$$(a,b)=(a_0,b_0)+t(u,v).$$
+Along this progression the sum $s:=a+b$ changes by the constant increment $\Delta:=u+v\ne0$ (the sunny condition excludes $\Delta=0$). The admissible sums inside $\mathcal T_m$ are the integers $2,3,\dots,m+1$.
+
+- If $|\Delta|\ge3$, then among $m$ consecutive integers there are at most $\lceil m/|\Delta|\rceil\le\lceil m/3\rceil\le\lfloor\tfrac{m+1}2\rfloor$ values in any fixed residue class modulo $|\Delta|$. Hence $|\ell\cap\mathcal T_m|\le\lfloor\tfrac{m+1}2\rfloor$.
+- If $|\Delta|=2$, the sums on $\ell$ have fixed parity, so intersect $\{2,\dots,m+1\}$ in at most $\lceil m/2\rceil=\lfloor\tfrac{m+1}2\rfloor$ values.
+- If $|\Delta|=1$, then the primitive direction is (up to order and sign) $(p,1-p)$ with $p\in\mathbb Z$, $p\ge2$. Writing the line with slope $-(p-1)/p$ in the form $y=-(p-1)x/p+\beta$, the integer points on it have $x\equiv r\pmod p$ for some fixed residue $r$. Since for $(a,b)\in\mathcal T_m$ one has $1\le a\le m$, the number of admissible $x$ is at most $\lceil m/p\rceil\le\lceil m/2\rceil=\lfloor\tfrac{m+1}2\rfloor$. The complementary family of slope $-p/(p-1)$ is handled symmetrically, giving the same bound. This proves the universal upper bound $|\ell\cap\mathcal T_m|\le\lfloor\tfrac{m+1}2\rfloor$ for all sunny lines.
+
+It remains to classify maximizers when $m\ge3$ is odd, say $m=2t+1$. Then $\lfloor\tfrac{m+1}2\rfloor=t+1$.
+
+- Slope $+1$: Lines are $y=x+c$ with $c\in\mathbb Z$. The points in $\mathcal T_m$ satisfy $1\le x\le \lfloor\tfrac{m+1-c}2\rfloor$ and $x\ge\max\{1,1-c\}$. Hence
+$$N(c)=\#\bigl(\ell\cap\mathcal T_m\bigr)=\lfloor\tfrac{m+1-c}2\rfloor-\max\{1,1-c\}+1.$$
+When $c=0$ this gives $N(0)=\lfloor\tfrac{m+1}2\rfloor=t+1$. If $c\ge1$, then $\lfloor\tfrac{m+1-c}2\rfloor\le\tfrac{m-c}2\le t$, so $N(c)\le t$. If $c\le-1$, then $\max\{1,1-c\}=1-c\ge2$, while $\lfloor\tfrac{m+1-c}2\rfloor\le\tfrac{m+2}2=t+1$, hence $N(c)\le(t+1)-2+1=t$. Thus among slope-$+1$ lines the unique maximizer is $y=x$.
+
+- Slope $-2$: Lines are $y=-2x+B$ with $B\in\mathbb Z$. The integer points in $\mathcal T_m$ occur for
+$$\max\{1,\,B-(m+1)\}\ \le\ x\ \le\ \Big\lfloor\tfrac{B-1}2\Big\rfloor,$$
+whence
+$$N(B)=\Big\lfloor\tfrac{B-1}2\Big\rfloor-\max\{1,\,B-(m+1)\}+1.$$
+If $B\le m+1$, then $N(B)=\lfloor\tfrac{B-1}2\rfloor$, which is strictly increasing in $B$ and gives $N\le\lfloor\tfrac m2\rfloor=t$ at $B=m+1$. If $B\ge m+2$, then $N(B)=\lfloor\tfrac{B-1}2\rfloor-B+m+2$, which is nonincreasing in $B$, hence maximized at $B=m+2$ with value $\lfloor\tfrac{m+1}2\rfloor=t+1$. Therefore the unique maximizer in this family is $y=-2x+(m+2)$.
+
+- Slope $-\tfrac12$: Lines are $y=-\tfrac12x+C$ with $2C\in\mathbb Z$. For $(a,b)\in\mathcal T_m$ on this line, we have $x\in[1,\,\min\{\,2(C-1),\,2(m+1-C)\,\}]$, and $x$ must have the parity of $2C$. Thus
+$$N(C)=\#\{x\in\mathbb Z:\ 1\le x\le L(C),\ x\equiv 2C\ (\bmod\ 2)\},\qquad L(C):=2\min\{C-1,\,m+1-C\}.$$
+The function $L(C)$ is maximized when $C=(m+2)/2$, where $L(C)=m$; then exactly half of the integers in $[1,m]$ match the required parity, giving $N\bigl((m+2)/2\bigr)=\lfloor\tfrac{m+1}2\rfloor=t+1$. For any other $C$, $L(C)\le m-2$, so $N(C)\le\lfloor\tfrac{m-1}2\rfloor=t$. Hence the unique maximizer in this family is $y=-\tfrac12x+\tfrac{m+2}2$.
+
+Finally, if $|\Delta|\ge3$ then $N\le\lceil m/3\rceil\le t$; and for $|\Delta|=1$ with primitive direction $(p,1-p)$ (or $(1-p,p)$) and $p\ge3$, the spacing of $x$-coordinates by $p$ (or of $y$-coordinates by $p$) yields $N\le\lceil m/p\rceil\le\lceil m/3\rceil\le t$. Therefore, when $m$ is odd and at least $3$, the only sunny lines that attain $t+1=(m+1)/2$ points are exactly the three listed above. ∎
+
+Corollary 2. For $m\ge4$, the set $\mathcal T_m$ cannot be covered by $m$ sunny lines. For $m=2$ this is also impossible, while $m=1$ and $m=3$ are possible.
+
+Proof. For $m=1,3$ explicit coverings were exhibited in step 1. For $m=2$, the three points cannot be covered by two sunny lines: the pair $(1,2),(2,1)$ lies on slope $-1$, and any sunny line through $(1,1)$ misses at least one of them. For $m\ge4$, if $m=2t$ is even then each sunny line meets $\mathcal T_m$ in at most $\lfloor\tfrac{m+1}2\rfloor=t$ points, so $m$ sunny lines cover at most $mt=2t^2<|\mathcal T_m|=2t^2+t$. If $m=2t+1\ge5$ is odd, Lemma 1 implies that at most three sunny lines can have $t+1$ points each, all others have at most $t$; hence the total is at most $3(t+1)+(m-3)t=2t^2+t+3<|\mathcal T_m|=2t^2+3t+1$. ∎
+
+3) A universal lower bound on what sunny lines must cover.
+
+Consider a covering of $\mathcal T_n$ by $n$ lines containing exactly $k$ sunny lines. Let the numbers of non-sunny horizontals, verticals, and anti-diagonals be $h$, $v$, and $d$, respectively, so $h+v+d=n-k$. For each $r\in\{2,\dots,n+1\}$, either $D_r$ itself is among the chosen $d$ anti-diagonals, or else the $h+v$ horizontal/vertical lines can cover on $D_r$ at most $h+v$ points (each meets $D_r$ in at most one lattice point); hence at least $\max\{0,(r-1)-(h+v)\}$ points of $D_r$ must be covered by sunny lines.
+
+To minimize the total burden on the sunny lines, choose as the $d$ anti-diagonals the ones with the largest $r$; then the remaining anti-diagonals are exactly $D_2,\dots,D_{m+1}$ with $m:=n-d$. Consequently, the number $Q$ of points that must be covered by the $k$ sunny lines is at least
+$$Q\ge\sum_{s=1}^{m}\max\{0,\,s-(h+v)\}=\frac{(m-(h+v))(m-(h+v)+1)}2.$$
+Since $m-(h+v)=n-(h+v+d)=k$, we obtain the universal lower bound
+$$Q\ge\frac{k(k+1)}2.$$
+In words: regardless of how the non-sunny lines are chosen, the $k$ sunny lines are forced to cover at least $\tfrac{k(k+1)}2$ lattice points.
+
+4) Non-existence for $k\notin\{0,1,3\}$.
+
+Fix $k\ge0$ and suppose a covering by $n$ lines with exactly $k$ sunny lines exists. By step 3, these $k$ sunny lines must cover at least $\tfrac{k(k+1)}2$ points. To make this task maximally favorable, retain only the $d:=n-k$ anti-diagonals $D_{k+2},\dots,D_{n+1}$ among the non-sunny lines; this leaves exactly $\mathcal T_k$ to be covered by the $k$ sunny lines, and $|\mathcal T_k|=\tfrac{k(k+1)}2$ equals the lower bound just obtained. Therefore a necessary condition for the existence of a configuration with exactly $k$ sunny lines is that $\mathcal T_k$ be coverable by $k$ sunny lines.
+
+By Corollary 2, this is possible if and only if $k\in\{1,3\}$; together with the trivial case $k=0$ from step 1, we conclude that only $k\in\{0,1,3\}$ can occur. Combined with step 1, this completes the classification. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Lemma 1’s maximizer classification for odd m omits the case |Δ|=2 with slopes other than +1 (e.g., slopes −3 or −1/3); it does not show these cannot attain (m+1)/2 points, so the uniqueness claim (and the “at most three maximizers” used later) is unproven.
+
+----------------------------------------

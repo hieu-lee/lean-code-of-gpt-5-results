@@ -1,0 +1,1 @@
+For every L>0 and every stepsize η∈(0,2/L), there exists a one-dimensional convex L-smooth function f such that, for the gradient-descent iterates x_{n+1}=x_n-η∇f(x_n) started at x_0=0, the sequence n↦||∇f(x_n)||^2 is not convex; in fact, ||∇f(x_2)||^2-2||∇f(x_1)||^2+||∇f(x_0)||^2<0.

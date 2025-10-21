@@ -1,0 +1,1 @@
+There is no absolute β>0 such that, for every pair of graphs G,H, every edge‑weighting ω:E(G□H)→{1,3} yields at least β·min{|E(G)|,|E(H)|}·max{|V(G)|,|V(H)|} edges uv with |s_ω(u)−s_ω(v)|≤1.

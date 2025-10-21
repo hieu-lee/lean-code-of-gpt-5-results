@@ -1,0 +1,42 @@
+=== Prover/Solver Pair #6 Log ===
+Location: D:\DeepResearchPP\imo2025\imo2025_p1_6_log
+Main file: imo2025_p1_6.log
+(Per-iteration details will be in IterationN.log files)
+
+=== Iteration 1 ===
+- proof length: 5722 chars
+- Judge #1: REJECT (feedback length: 362)
+
+=== Iteration 2 ===
+- proof length: 5017 chars
+- Judge #1: REJECT (feedback length: 256)
+
+=== Iteration 3 ===
+- proof length: 8046 chars
+- Judge #1: REJECT (feedback length: 256)
+
+=== Iteration 4 ===
+- proof length: 8471 chars
+- Judge #1: REJECT (feedback length: 446)
+
+=== Iteration 5 ===
+- proof length: 7542 chars
+- Judge #1: REJECT (feedback length: 314)
+
+=== Iteration 6 ===
+- proof length: 9149 chars
+- Judge #1: REJECT (feedback length: 255)
+
+=== Iteration 7 ===
+- proof length: 8661 chars
+- Judge #1: REJECT (feedback length: 238)
+
+=== Iteration 8 ===
+- proof length: 8395 chars
+- Judge #1: REJECT (feedback length: 366)
+
+=== Iteration 9 ===
+- proof length: 8790 chars
+- Judge #1: ACCEPT -> forwarding to Judge #2
+- Judge #2: ACCEPT (final)
+

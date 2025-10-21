@@ -1,0 +1,1 @@
+For every integer $\Delta\ge3$, one has $\theta_{\Delta}(K_2\,\square\,K_{1,\Delta})=0$. Consequently, there is no absolute constant $c>0$ such that for every graph $G$ one has $\theta_{\Delta}(K_2\,\square\,G)\ge\max\{\theta_{\Delta}(G),c\}$ (indeed, not even $\theta_{\Delta}(K_2\,\square\,G)\ge c$ holds universally).

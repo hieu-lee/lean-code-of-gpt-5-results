@@ -1,0 +1,73 @@
+========================================
+Iteration 2 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** The smallest real constant $c$ such that $f(n)\le cn$ for all bonza functions $f:\mathbb N\to\mathbb N$ and all $n\in\mathbb N$ is $c=4$.
+
+**Proof.** A function $f$ is bonza if
+$$
+\forall a,b\in\mathbb N:\quad f(a)\mid b^{a}-f(b)^{f(a)}.\tag{1}
+$$
+We derive a sequence of consequences.
+
+1) $f(1)=1$. Indeed, from $(1)$ with $(a,b)=(1,1)$ we get $f(1)\mid 1-f(1)^{f(1)}$, impossible unless $f(1)=1$.
+
+2) For all $a$, $f(a)\mid a^{a}$. This follows from $(1)$ with $b=a$ since $f(a)\mid f(a)^{f(a)}$.
+
+3) If a prime $r$ divides $f(a)$, then $r\mid f(r)$. Indeed, with $b=r$ in $(1)$ and reducing modulo $r$, we get $r\mid f(r)^{f(a)}$, hence $r\mid f(r)$.
+
+4) For an odd prime $p$ with $p\mid f(p)$, one has $f(p)=p$, and moreover
+$$
+\forall b\in\mathbb N:\quad b\equiv f(b)\pmod p.\tag{2}
+$$
+Proof: By (2), $f(p)\mid p^{p}$, so $f(p)=p^{s}$ for some $1\le s\le p$. From $(1)$ with $a=p$ and reducing modulo $p$ we obtain $b\equiv f(b)^{p^{s-1}}\pmod p$ for all $b$. If $s\ge 2$, then for $b$ not divisible by $p$ we get $b\equiv 1\pmod p$, contradiction. Hence $s=1$, i.e. $f(p)=p$, and then $b^{p}\equiv f(b)^{p}\pmod p$ implies $b\equiv f(b)\pmod p$ by Fermat's little theorem. This proves (2).
+
+Let $\mathcal P_{\mathrm{odd}}=\{\text{odd primes }p: p\mid f(p)\}$. We distinguish cases.
+
+– Case I: $\mathcal P_{\mathrm{odd}}$ is infinite. Fix $b$. By (2), $b\equiv f(b)\pmod p$ for all $p\in\mathcal P_{\mathrm{odd}}$, hence $b-f(b)$ is divisible by infinitely many primes. Thus $f(b)=b$ for all $b$, i.e. $f=\operatorname{id}$. In particular $f(n)\le n$ for all $n$.
+
+– Case II: $\mathcal P_{\mathrm{odd}}$ is finite. Let $L=\prod_{p\in\mathcal P_{\mathrm{odd}}}p$ (with $L=1$ if $\mathcal P_{\mathrm{odd}}=\emptyset$). If $\mathcal P_{\mathrm{odd}}\ne\emptyset$, choose $b$ such that $b\equiv 2\pmod L$ and $b\equiv 1\pmod 2$ (Chinese remainder theorem). Then by (2) we have $f(b)\equiv 2\pmod p$ for all $p\in\mathcal P_{\mathrm{odd}}$, so no odd prime of $\mathcal P_{\mathrm{odd}}$ divides $f(b)$. If $f(b)>1$ and $r$ is an odd prime divisor of $f(b)$, then by (3) $r\mid f(r)$, hence $r\in\mathcal P_{\mathrm{odd}}$, a contradiction. Thus $f(b)$ is a power of $2$. But $b$ is odd and by (2) $f(b)\mid b^{b}$, hence $f(b)$ is odd; therefore $f(b)=1$, contradicting $f(b)\equiv 2\pmod p$ for $p\in\mathcal P_{\mathrm{odd}}$. Hence $\mathcal P_{\mathrm{odd}}=\emptyset$.
+
+Consequences of $\mathcal P_{\mathrm{odd}}=\emptyset$.
+
+5) For every odd prime $p$, $p\nmid f(p)$. Combined with $f(p)\mid p^{p}$, this forces $f(p)=1$ for all odd primes $p$.
+
+6) For all $n$, $f(n)$ is a power of $2$, and for odd $n$ one has $f(n)=1$. Indeed, if an odd prime $r$ divided some $f(n)$, then by (3) $r\mid f(r)=1$, impossible.
+
+7) 2-adic control for even inputs. Let $m$ be even and write $f(m)=2^{e(m)}$. Using $(1)$ with $a=m$ and $b=3$ (note $f(3)=1$ by 5)), we get $2^{e(m)}\mid 3^{m}-1$. Writing $m=2^{t}u$ with $u$ odd and $t\ge 1$, the LTE formula gives
+$$
+\nu_{2}(3^{m}-1)=\nu_{2}(3^{2^{t}}-1)=\nu_{2}(3-1)+\nu_{2}(3+1)+(t-1)=1+2+(t-1)=t+2,
+$$
+so
+$$
+ e(m)\le t+2=\nu_{2}(m)+2.\tag{3}
+$$
+In particular, for every even $m$,
+$$
+ f(m)=2^{e(m)}\le 2^{\nu_{2}(m)+2}=4\cdot 2^{\nu_{2}(m)}\le 4m.\tag{4}
+$$
+Combining with $f(n)=1$ for odd $n$, we conclude that in Case II one always has $f(n)\le 4n$ for all $n$.
+
+We have proved: for every bonza $f$, either $f=\operatorname{id}$ (hence $f(n)\le n$) or $f(n)\le 4n$ for all $n$. Therefore, for all bonza $f$ and all $n$, $f(n)\le 4n$.
+
+It remains to show that $c=4$ is sharp. Define $f_{\max}:\mathbb N\to\mathbb N$ by
+- $f_{\max}(1)=1$;
+- $f_{\max}(n)=1$ for odd $n>1$;
+- $f_{\max}(2)=4$;
+- for even $n\ge 4$, $f_{\max}(n)=2^{\nu_{2}(n)+2}$.
+We verify $f_{\max}$ is bonza. If $a$ is odd, $f_{\max}(a)=1$ and $(1)$ is trivial. If $a=2$, then for any $b$ we have $4\mid b^{2}-f_{\max}(b)^{4}$: for odd $b$, $b^{2}\equiv1\pmod 8$ and $f_{\max}(b)^{4}=1$; for even $b$, $b^{2}\equiv 0\pmod 4$ and $f_{\max}(b)^{4}\equiv 0\pmod{16}$. If $a\ge 4$ is even, set $s=\nu_{2}(a)+2$, so $f_{\max}(a)=2^{s}$. Then for odd $b$, the LTE computation above gives $\nu_{2}(b^{a}-1)\ge s$, hence $2^{s}\mid b^{a}-1=f_{\max}(b)^{2^{s}}-b^{a}$. For even $b$, $\nu_{2}(b^{a})=a\,\nu_{2}(b)\ge a\ge s$, while $\nu_{2}(f_{\max}(b)^{2^{s}})\ge 2^{s}>s$, so $\nu_{2}(b^{a}-f_{\max}(b)^{2^{s}})\ge s$. Thus $f_{\max}$ is bonza. Finally, for every $k\ge 2$, $f_{\max}(2^{k})=2^{k+2}=4\cdot 2^{k}$, so $\sup_{n} f_{\max}(n)/n=4$, proving that no $c<4$ works.
+
+Therefore the minimal constant is $c=4$. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+In step 4, the deduction that if f(p)=p^s with s≥2 then for b not divisible by p one gets b≡1 (mod p) is invalid; from b^p≡f(b)^{p^s} (mod p) one only obtains (for p∤b) b≡f(b) (mod p), so no contradiction follows and the conclusion s=1 (hence f(p)=p) is unjustified.
+
+----------------------------------------

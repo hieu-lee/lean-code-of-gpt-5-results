@@ -1,0 +1,1 @@
+Robustness under small unimodular perturbations. There exist absolute c,ε_0>0 such that for all sufficiently large n there is a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n} and the following holds: for every T∈SL_n(R) with ||T-I||_{op} ≤ ε_0, one has Δ(TL) ≥ (c/2) n^{2} 2^{-n}.

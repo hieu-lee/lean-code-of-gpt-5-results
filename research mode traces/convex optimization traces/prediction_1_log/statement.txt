@@ -1,0 +1,1 @@
+(EG convexity up to the stability limit.) Let f be convex and L-smooth. For extragradient with any stepsize \eta\in(0,2/L], the optimization curve is convex: the sequence n\mapsto f(x_n) satisfies \delta_n\ge 0 for all n.

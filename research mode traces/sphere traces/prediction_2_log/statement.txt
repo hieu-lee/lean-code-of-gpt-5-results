@@ -1,0 +1,1 @@
+Abundance of high-density lattices. There exist absolute c,C>0 such that for all sufficiently large n there are at least exp(c n \log n) pairwise non–SL_n(Z)-equivalent unimodular lattices L with Δ(L) ≥ c n^{2} 2^{-n} and (1/vol_n(V(L))) ∫_{V(L)} ||x||^2 dx ≤ C n.

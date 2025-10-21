@@ -1,0 +1,1 @@
+Well-spread minimal vectors at the Klartag scale. There exist absolute c,C>0 such that for every n≥3 there is a unimodular lattice L with Δ(L) ≥ c n^{2} 2^{-n} whose set S of minimal directions S:=\{ v/||v|| : v∈L, ||v||=λ(L) \} satisfies \bigl\| \frac{1}{|S|} \sum_{u∈S} u u^{\top} - \frac{1}{n} I \bigr\|_{op} ≤ C/\sqrt{n}.

@@ -1,0 +1,1 @@
+Conjecture 8 (List-NSD robustness under sparse 2-lists). There exists an absolute α∈(0,1) such that the following holds for all sufficiently large Δ: for every nice graph G with Δ(G)=Δ and every α-dense list assignment L:E(G)→2^{\{1,2,3\}} (i.e., at most an α-fraction of edges around any vertex have 2-lists, all others have 3-lists), there is a list NSD 3-edge-weighting from L.

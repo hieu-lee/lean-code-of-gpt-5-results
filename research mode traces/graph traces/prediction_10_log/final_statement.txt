@@ -1,0 +1,1 @@
+There exists an absolute constant K>0 such that for every integer n≥3, there is a 3–edge–weighting ω of K_n with |\mathrm{Bad}_1(\omega)| ≤ K\,n^{3/2}.

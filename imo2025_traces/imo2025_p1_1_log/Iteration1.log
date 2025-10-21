@@ -1,0 +1,65 @@
+========================================
+Iteration 1 - Prover Output
+========================================
+
+[PROOF - Markdown]
+
+**Claim.** For every integer $n\ge 3$, the values of $k\in\{0,1,\dots,n\}$ for which there exist $n$ distinct lines covering all integer points $(a,b)$ with $a,b\in\mathbb N$, $a,b\ge 1$, $a+b\le n+1$, and with exactly $k$ sunny lines, are precisely
+$$k\in\{0,1,3\}.$$
+
+**Proof.**
+Denote by $\mathcal T_m$ the set of lattice points $\{(a,b)\in\mathbb N^2: a,b\ge 1,\ a+b\le m+1\}$; thus the problem is about $\mathcal T_n$. We call the anti-diagonals $D_r:=\{(a,b): a+b=r\}$ for $r=2,3,\dots,n+1$.
+
+We split the proof into existence and non-existence parts.
+
+1) Existence for $k\in\{0,1,3\}$. 
+- $k=0$: take the $n$ anti-diagonals $D_2,D_3,\dots,D_{n+1}$; none is sunny and they cover $\mathcal T_n$.
+- $k=1$: take $D_3,D_4,\dots,D_{n+1}$ and add the sunny line $y=x$; the unique point left off $\bigcup_{r\ge 3}D_r$ is $(1,1)$, which lies on $y=x$.
+- $k=3$: take $D_5,D_6,\dots,D_{n+1}$ and add the three sunny lines
+$$y=x,\quad y=-2x+5,\quad y=-\tfrac12 x+\tfrac52.$$
+They cover $D_2\cup D_3\cup D_4$ as follows:
+$y=x$ covers $(1,1),(2,2)$; $y=-2x+5$ covers $(1,3),(2,1)$; $y=-\tfrac12 x+\tfrac52$ covers $(1,2),(3,1)$. Hence $\mathcal T_n$ is covered with exactly three sunny lines.
+
+2) A reduction. Fix $k\ge 0$. Suppose $\mathcal T_n$ is covered by $n$ lines with exactly $k$ sunny lines. Among the remaining $n-k$ non-sunny lines, replacing any vertical/horizontal line by a suitable anti-diagonal does not decrease the set of points covered by the non-sunny lines and does not increase $k$; therefore, to make covering easiest for the sunny lines, we may (and do) assume all $n-k$ non-sunny lines are anti-diagonals. Among all $n-k$-subsets of $\{D_2,\dots,D_{n+1}\}$, the choice $\{D_{k+2},\dots,D_{n+1}\}$ covers the most points; the leftover is exactly the small triangle $\mathcal T_k$ (the union of $D_2,\dots,D_{k+1}$), which has $1+2+\cdots+k=\frac{k(k+1)}2$ points. Consequently, a necessary condition for the existence of a configuration with exactly $k$ sunny lines is that $\mathcal T_k$ can be covered by $k$ sunny lines.
+
+Thus the problem reduces to the following intrinsic question.
+
+3) A sharp bound inside a small triangle.
+
+Lemma 1. Let $m\ge 1$. Any sunny line intersects $\mathcal T_m$ in at most $\big\lfloor\tfrac{m+1}2\big\rfloor$ points. Moreover, when $m$ is odd, the only sunny lines meeting $\mathcal T_m$ in exactly $\tfrac{m+1}2$ points are precisely
+$$y=x,\quad y=-2x+(m+2),\quad y=-\tfrac12 x+\tfrac{m+2}2.$$
+
+Proof. Any line through lattice points has a primitive integer direction vector $(u,v)$ with $\gcd(u,v)=1$. Along such a line, the sum $a+b$ changes by the constant $\Delta:=u+v$ from one lattice point to the next. Inside $\mathcal T_m$ the allowed sums are $2,3,\dots,m+1$, a segment of length $m$. Hence the number $N$ of lattice points of the line inside $\mathcal T_m$ is bounded by
+$$N\le 1+\big\lfloor \tfrac m{\lvert\Delta\rvert}\big\rfloor,$$
+with the convention $\Delta\ne 0$ since sunny lines are not parallel to $x+y=\text{const}$. Consequently $N\le 1+\lfloor m/2\rfloor=\lfloor (m+1)/2\rfloor$ whenever $|\Delta|\ge 2$.
+
+If $|\Delta|=1$ (the only possibilities with gcd$=1$ are primitive directions $\pm(1,-2)$ or $\pm(2,-1)$, i.e., slopes $-2$ and $-\tfrac12$), then a potential upper bound is $N\le 1+m$, but the triangular domain truncates the arithmetic progression at one end. A direct enumeration shows the unique choices maximizing $N$ are the lines passing through the extreme vertices $(1,m)$ and $(m,1)$, namely $y=-2x+(m+2)$ and $y=-\tfrac12 x+\tfrac{m+2}2$, and a routine check yields $N=\lceil\tfrac{m+1}2\rceil$. 
+
+If $\Delta=2$ (slope $+1$), then the line intersects $\mathcal T_m$ in exactly $\lfloor (m+1)/2\rfloor$ points iff it is $y=x$; any shift $y=x+c$ with $c\ne 0$ loses at least one admissible lattice point inside the triangle. Combining the three cases gives the stated bound and uniqueness at the top value. ∎
+
+Corollary 2. For $m\ge 4$ the set $\mathcal T_m$ cannot be covered by $m$ sunny lines. For $m=2$ this is also impossible, while for $m=1$ and $m=3$ it is possible.
+
+Proof. For $m=1$ and $m=3$, explicit coverings were given above. For $m=2$, $\mathcal T_2=\{(1,1),(1,2),(2,1)\}$ cannot be covered by two sunny lines because the pair $(1,2),(2,1)$ lies on a line of slope $-1$ (non-sunny), and any sunny line through $(1,1)$ misses one of them.
+
+For $m\ge 4$, by Lemma 1 each sunny line contributes at most $\lfloor (m+1)/2\rfloor$ points. If $m$ is even, say $m=2t$, then $m\lfloor\tfrac{m+1}2\rfloor=2t\cdot t=2t^2<2t^2+t=\tfrac{m(m+1)}2=|\mathcal T_m|$, so $m$ sunny lines cannot cover $\mathcal T_m$.
+
+If $m$ is odd, say $m=2t+1\ge 5$, then $\lfloor\tfrac{m+1}2\rfloor=t+1$, and by Lemma 1 at most three sunny lines can achieve $t+1$ points each (namely the three exceptional lines listed), while every other sunny line meets $\mathcal T_m$ in at most $t$ points. Hence $m$ sunny lines cover at most
+$$3(t+1)+(m-3)t=3t+3+(2t-2)t=2t^2+t+3=\tfrac{m(m+1)}2-(t-1)<\tfrac{m(m+1)}2,$$
+which again is insufficient. ∎
+
+4) Non-existence for $k\notin\{0,1,3\}$. 
+
+Assume there is a covering of $\mathcal T_n$ by $n$ lines with exactly $k$ sunny lines. As argued in step 2, it suffices (and is most favorable for the sunny lines) to take the remaining $n-k$ lines to be anti-diagonals, in which case choosing $D_{k+2},\dots,D_{n+1}$ leaves exactly $\mathcal T_k$ uncovered for the sunny lines. Therefore $\mathcal T_k$ must be coverable by $k$ sunny lines. By Corollary 2 this is possible only for $k\in\{1,3\}$. Together with the trivial case $k=0$ treated in step 1, we conclude that no other $k$ can occur.
+
+Combining the existence and non-existence parts completes the proof: the admissible values are exactly $k\in\{0,1,3\}$. ∎
+
+----------------------------------------
+
+Judge #1 Assessment
+Decision: REJECT
+
+Feedback (first flaw):
+
+Faulty reduction in Step 2: replacing a vertical or horizontal line by a single anti-diagonal need not preserve (or enlarge) the set of covered lattice points in T_n, since a vertical/horizontal line meets many anti-diagonals while one anti-diagonal contains only points with fixed a+b; thus the claim that such a replacement does not decrease coverage is false.
+
+----------------------------------------

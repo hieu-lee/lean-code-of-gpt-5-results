@@ -1,0 +1,1 @@
+Conjecture 9 (Quantitative strong edge-separation in K_n). There exists an absolute γ>0 such that for all n sufficiently large, every 3-edge-weighting ω of K_n satisfies |Bad_1(ω)|≥γ·n^2. Moreover, the extremal order n^2 is tight up to constants.

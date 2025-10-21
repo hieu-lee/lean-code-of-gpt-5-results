@@ -1,0 +1,1 @@
+Conjecture 10 (NSD reconfiguration expansion in expanders). There exists c>0 such that if G is a d-regular expander on n vertices with spectral gap at least c and n sufficiently large, then R_3(G) is connected and has diameter at most n^{O(1)}, and furthermore the simple “single-edge resampling” Markov chain on R_3(G) is rapidly mixing (polynomial mixing time).

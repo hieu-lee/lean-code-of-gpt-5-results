@@ -1,0 +1,1 @@
+(EG monotonicity of one-step decrease.) Let f be convex and L-smooth. For extragradient with any \eta\in(0,2/L], the one-step decreases are nonincreasing: \Delta_{n+1}\le \Delta_n for all n.
