@@ -2,7 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Data.Real.Basic
 import Myproj.Definitions
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
 
 -- Silence style hints to keep focus on the core argument in this file
 set_option linter.unnecessarySimpa false

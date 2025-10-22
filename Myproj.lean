@@ -9,3 +9,5 @@ import Myproj.ThmKFoldOppermann.Main
 import Myproj.ThmLegendreCyclics.Main
 import Myproj.ThmSquares.Main
 import Myproj.ThmFiroozbakhtCyclics3.Main
+import Myproj.BackwardEulerConvex.Main
+import Myproj.HighDensityLattices.Main

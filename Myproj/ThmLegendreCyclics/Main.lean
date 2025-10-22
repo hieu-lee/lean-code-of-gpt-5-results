@@ -2,7 +2,8 @@ import Mathlib.Tactic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Prime.Basic
 import Myproj.Definitions
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
+import Myproj.ThmLegendreCyclics.Axioms
 -- bounds come from axioms aggregated in `Myproj.Axioms`
 
 /-!

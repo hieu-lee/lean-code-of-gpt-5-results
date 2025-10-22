@@ -1,7 +1,8 @@
 import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 import Mathlib.Topology.Basic
 import Myproj.Definitions
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
+import Myproj.ThmSquares.Axioms
 
 /-
 Auxiliary lemmas supporting the square-gap asymptotic for cyclic numbers.

@@ -1,4 +1,4 @@
-import Myproj.Axioms
+import Myproj.ThmKFoldOppermann.Axioms
 import Myproj.Definitions
 
 /-

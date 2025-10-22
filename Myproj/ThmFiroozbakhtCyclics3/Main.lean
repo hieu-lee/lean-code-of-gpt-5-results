@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
+import Myproj.ThmFiroozbakhtCyclics3.Axioms
 
 /-
 # Summary

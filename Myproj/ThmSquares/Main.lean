@@ -1,6 +1,7 @@
 import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 import Myproj.Definitions
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
+import Myproj.ThmSquares.Axioms
 import Myproj.ThmSquares.Auxiliary
 
 /-

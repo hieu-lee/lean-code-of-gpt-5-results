@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 import Myproj.Definitions
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
 
 -- Silence minor style hints in this short counterexample file
 set_option linter.unnecessarySimpa false

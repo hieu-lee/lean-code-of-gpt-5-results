@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Order.Filter.AtTopBot.Archimedean
 import Mathlib.Topology.Basic
 import Mathlib.Tactic.Linarith
-import Myproj.Axioms
+import Myproj.CyclicNumbers.Axioms
 import Myproj.Definitions
 
 -- Silence minor style hints to keep focus on core math
