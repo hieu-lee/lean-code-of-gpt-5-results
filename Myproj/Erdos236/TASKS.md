@@ -1,34 +1,16 @@
-# Erdős Problem 236 Formalization Tasks
+# Erdős Problem 236 Task Tracker
 
-## Context
-- Goal: formalize the proof from `erdos problems/conj8.md` showing `f(n) = o(log n)` via an explicit `O((log n)^{1/2} log log n)` bound.
-- Port the argument into Lean with files capped at 250 lines while matching the textual proof structure.
-- Follow the project guidance in `NOTICE.md`, including frequent `lake build` runs and centralized axioms.
+## Advisor Directive (2025-02)
+- Re-express the main asymptotic statement in `Myproj/Erdos236/Main.lean` so that it matches the `formal-conjectures` version verbatim.
+- Eliminate reliance on custom axioms by rebuilding every ingredient from Mathlib where possible (long-term).
 
-## Key Considerations
-- Extract every classical analytic input (large sieve, prime counting bounds, distribution of powers modulo primes) as general axioms with documented web citations.
-- Keep helper lemmas localized inside this folder; reuse existing number-theoretic utilities from `Myproj.Definitions` where possible.
-- Maintain clear separation between arithmetic setup (definitions, counting lemmas) and the additive large sieve estimate.
+## Current Steps
+1. **Mirror Statement** — introduce the exact definition of `f` and theorem `erdos_236` from `FormalConjectures/ErdosProblems/236.lean`, then re-prove the result using the existing infrastructure. ☑ _Done (2025-02-15)_
+2. **Discharge Axioms** — replace each placeholder axiom in `Axioms.lean` with Mathlib proofs or references once available. ☐ _In progress_
 
-## Action Items
-
-### Setup
-- [x] Create `Myproj/Erdos236` workspace folder and this task tracker.
-- [x] Add Lean module skeletons (`Axioms.lean`, helpers, proof file) and update project imports.
-
-### Axioms and References
-- [x] Use `web_search` to source citations for the additive large sieve inequality and standard prime-counting bounds, then record them as general axioms with comments.
-
-### Helper Development
-- [x] Define the counting objects (`f`, `S`, residue class data) and derive the inequalities leading up to the large sieve bound (`representation_le_sieve_add`, `sieveCount_log_bound`, etc.). See `Myproj/Erdos236/Bounds.lean:23-205` and `Myproj/Erdos236/LargeSieve.lean:20-242`.
-- [x] Implement algebraic manipulations translating the sieve estimate into the final asymptotic for `f` (see `Myproj/Erdos236/Main.lean:577`).
-
-### Main Proof
-- [x] Assemble the full Lean proof of the upper bound `f(n) ≪ (log n)^{1/2} log log n`, concluding `f(n) = o(log n)` (`Myproj/Erdos236/Main.lean:611`).
-
-### Verification
-- [x] Run `lake build` after substantive edits and once the proof file is complete (`lake build` succeeds as of `Myproj/Erdos236/Main.lean` revision with `representation_three_pivot`).
-
-## Notes / Future Work
-- Consider isolating reusable sieve infrastructure if future Erdős problems require similar arguments.
-- Revisit the axiomatized results for potential internal proofs once a mathlib strategy is clear.
+## Notes
+- Align `primeCount` with `Nat.primeCounting` to leverage existing Mathlib lemmas; remove or justify the Rosser–Schoenfeld style bounds once proven internally.
+- Investigate Mathlib's `NumberTheory` library (e.g. `PrimeCounting`, `PrimeNumberTheorem`, Chebyshev bounds) to obtain replacements for `primeCount_upper` / `primeCount_lower`; document constants and thresholds used.
+- Search for an additive large sieve statement in Mathlib or formalize the required inequality directly so that `additiveLargeSieve` is no longer an axiom.
+- `lake build` last succeeded after mirroring the main theorem (2025-02-15); keep rebuilding after substantive edits.
+- Track progress on axiom removal with inline comments in `Axioms.lean` and update this tracker once each ingredient is discharged.

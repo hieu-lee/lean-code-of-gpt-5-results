@@ -712,5 +712,75 @@ theorem representationCount_littleO_log :
         =o[Filter.atTop] fun n => Real.log (n : ℝ) :=
     hLittleO_prod_real.comp_tendsto tendsto_natCast_atTop_atTop
   exact hO.trans_isLittleO hLittleO_prod_nat
+
+private lemma length_filter_range_eq_card_filter
+    (p : ℕ → Prop) [DecidablePred p] :
+    ∀ n,
+      ((List.range n).filter p).length =
+        ((Finset.range n).filter p).card := by
+  classical
+  refine Nat.rec (by simp) ?step
+  intro n ih
+  have hmem :
+      n ∉ (Finset.range n).filter p := by
+    simp [Finset.mem_filter, Finset.notMem_range_self]
+  by_cases hpn : p n
+  · have hlist :
+        ((List.range (n + 1)).filter p).length =
+          ((Finset.range n).filter p).card + 1 := by
+      simp [Nat.succ_eq_add_one, List.range_succ, List.filter_append,
+        ih, hpn]
+    have hfin :
+        ((Finset.range (n + 1)).filter p).card =
+          ((Finset.range n).filter p).card + 1 := by
+      have hset :
+          ((Finset.range (n + 1)).filter p) =
+            insert n ((Finset.range n).filter p) := by
+        simpa [Nat.succ_eq_add_one, Finset.range_add_one, hpn]
+          using
+            (Finset.filter_insert (a := n) (s := Finset.range n) (p := p))
+      simpa [hset] using
+        (Finset.card_insert (s := (Finset.range n).filter p) (a := n) hmem)
+    simpa [hlist, hfin]
+  · have hlist :
+        ((List.range (n + 1)).filter p).length =
+          ((Finset.range n).filter p).card := by
+      simp [Nat.succ_eq_add_one, List.range_succ, List.filter_append,
+        ih, hpn]
+    have hfin :
+        ((Finset.range (n + 1)).filter p).card =
+          ((Finset.range n).filter p).card := by
+      have hset :
+          ((Finset.range (n + 1)).filter p) =
+            (Finset.range n).filter p := by
+        simpa [Nat.succ_eq_add_one, Finset.range_add_one, hpn]
+          using
+            (Finset.filter_insert (a := n) (s := Finset.range n) (p := p))
+      simpa [hset]
+    simpa [hlist, hfin]
+
+/--
+$f(n)$ counts the number of solutions to $n = p + 2^k$ for prime $p$ and $k ≥ 0$.
+-/
+def f (n : ℕ) : ℕ :=
+  ((List.range (Nat.log2 n + 1)).filter fun k => Nat.Prime (n - 2 ^ k)).length
+
+lemma f_eq_representationCount (n : ℕ) :
+    f n = representationCount n := by
+  classical
+  have :=
+    length_filter_range_eq_card_filter
+      (p := fun k ↦ Nat.Prime (n - 2 ^ k)) (n := Nat.log2 n + 1)
+  simpa [f, representationCount, repSet, diffValue, binarySpan,
+    Nat.log2_eq_log_two, Nat.succ_eq_add_one, twoPow]
+    using this
+
+/--
+Let $f(n)$ count the number of solutions to $n = p + 2^k$ for prime $p$ and $k ≥ 0$.
+-/
+theorem erdos_236 :
+    (fun n => (f n : ℝ))
+      =o[Filter.atTop] fun n => Real.log (n : ℝ) := by
+  simpa [f_eq_representationCount] using representationCount_littleO_log
 end Erdos236
 end Myproj
