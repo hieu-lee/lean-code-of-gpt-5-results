@@ -7,6 +7,7 @@ import Myproj.ThmFiroozbakhtCyclics3.Axioms
 import Myproj.HighDensityLattices.Axioms
 import Myproj.IMO2025P3.Axioms
 import Myproj.Erdos50.Axioms
+import Myproj.ThmVrba.Axioms
 
 /-!
 Aggregator for all project-specific axioms. Import this module to access
