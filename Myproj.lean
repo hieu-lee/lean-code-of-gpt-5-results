@@ -16,3 +16,4 @@ import Myproj.Erdos236.Main
 import Myproj.DisconnectedR3.Main
 import Myproj.Erdos50.Main
 import Myproj.ThmVrba.Main
+import Myproj.ThmVisserCyclics.Main
