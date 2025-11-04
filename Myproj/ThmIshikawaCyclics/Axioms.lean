@@ -1,7 +1,7 @@
 import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Parity
+import Mathlib.Algebra.Ring.Parity
 import Mathlib.Data.Real.Basic
-import Mathlib.Order.Monotone
+import Mathlib.Order.Basic
 import Mathlib.Tactic
 import Myproj.Definitions
 import Myproj.CyclicNumbers.Axioms
@@ -9,7 +9,7 @@ import Myproj.Definitions.Primes
 import Myproj.ThmVrba.Axioms
 import Myproj.ThmFiroozbakhtCyclics4.Axioms
 
-/--
+/-!
 Axiom bundle for the Ishikawa analog of cyclic numbers. We package the
 literature inputs used in `theorems/thm_ishikawa.tex`:
 - Nagura's 1952 prime-gap result gives two primes in every dyadic interval
@@ -20,7 +20,7 @@ Each axiom records a search command run via DuckDuckGo (`curl` through
 `r.jina.ai`) during this session.
 -/
 
-noncomputable section
+-- noncomputability not needed in this axioms-only file
 
 namespace Myproj
 namespace Ishikawa
@@ -138,5 +138,3 @@ axiom cyclicEnumerator_fortyFour_ge :
 
 end Ishikawa
 end Myproj
-
-end

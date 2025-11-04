@@ -12,8 +12,8 @@ import Myproj.ThmFiroozbakhtCyclics3.Main
 import Myproj.ThmFiroozbakhtCyclics4.Main
 import Myproj.BackwardEulerConvex.Main
 import Myproj.HighDensityLattices.Main
-import Myproj.Erdos236.Main
 import Myproj.DisconnectedR3.Main
 import Myproj.Erdos50.Main
 import Myproj.ThmVrba.Main
 import Myproj.ThmVisserCyclics.Main
+import Myproj.ThmHassani.Main

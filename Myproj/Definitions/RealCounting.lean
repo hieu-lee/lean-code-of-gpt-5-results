@@ -16,8 +16,14 @@ def cyclicCountingReal (x : ℝ) : ℝ :=
   (((Finset.Icc 1 (Nat.floor x)).filter fun m : ℕ => isCyclicNumber m).card : ℕ)
     |> (fun n => (n : ℝ))
 
-/-- Third iterated logarithm on reals: `L(x) = log (log (log x))`. -/
-def L3R (x : ℝ) : ℝ := Real.log (Real.log (Real.log x))
+/--
+Third iterated logarithm on reals with a safe domain guard:
+`L3R x = log (log (log (max x (exp (exp 1)))))`.
+This ensures the inner `log` arguments are ≥ `e`, so the composition is defined
+for all real `x`. For `x ≥ exp (exp 1)`, this agrees with `log (log (log x))`.
+-/
+def L3R (x : ℝ) : ℝ :=
+  Real.log (Real.log (Real.log (max x (Real.exp (Real.exp 1)))))
 
 end Myproj
 
