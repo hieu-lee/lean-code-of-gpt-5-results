@@ -17,3 +17,4 @@ import Myproj.Erdos50.Main
 import Myproj.ThmVrba.Main
 import Myproj.ThmVisserCyclics.Main
 import Myproj.ThmHassani.Main
+import Myproj.ThmInfinitelyManySGCyclics.Main
