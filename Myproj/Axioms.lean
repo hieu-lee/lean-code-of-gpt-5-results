@@ -9,6 +9,7 @@ import Myproj.IMO2025P3.Axioms
 import Myproj.Erdos50.Axioms
 import Myproj.ThmVrba.Axioms
 import Myproj.ThmInfinitelyManySGCyclics.Axioms
+import Myproj.ThmDusartCyclics.Axioms
 
 /-!
 Aggregator for all project-specific axioms. Import this module to access

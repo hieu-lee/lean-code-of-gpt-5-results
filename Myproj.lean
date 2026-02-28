@@ -3,7 +3,7 @@ import Myproj.Axioms
 import Myproj.AsymptoticKCyclicsBetweenCubes
 import Myproj.ThmCarneiroCyclics
 import Myproj.ThmCarneiroSGCyclics
-import Myproj.ThmDusartCyclics
+import Myproj.ThmDusartCyclics.Main
 import Myproj.IMO2025P3.Main
 import Myproj.ThmKFoldOppermann.Main
 import Myproj.ThmLegendreCyclics.Main
